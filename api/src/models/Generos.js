@@ -6,6 +6,7 @@ module.exports = (sequelize) => {
   sequelize.define('Genero', {
     id: {
       type: DataTypes.INTEGER,
+      allowNull : false,
       primaryKey: true
     },
     name: {

@@ -7,6 +7,7 @@ module.exports = (sequelize) => {
     ID: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
+      allowNull : false,
       primaryKey: true
     },
     name: {
@@ -14,13 +15,15 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     Descripción: {
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
+      allowNull : false
     },
     Rating :{
      type : DataTypes.INTEGER
     },
     Plataformas :{
-      type : DataTypes.STRING
+      type : DataTypes.STRING,
+      allowNull : false
     }
   });
 };
