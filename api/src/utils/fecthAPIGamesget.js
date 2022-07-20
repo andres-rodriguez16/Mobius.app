@@ -11,16 +11,15 @@ async function fecthAPIGames(url, count) {
     return error;
   }
 }
-
-function fecthAPIGamesFinal(datos) {
+function datosTraidosDeLaApi(datos) {
   let results = datos.map(v => {
     let videogame = {
-      ID: v.id,
+      id: v.id,
       name: v.name,
-      Rating: v.rating,
-      Plataformas: v.parent_platforms.map((platform) => platform.platform.name),
+      rating: v.rating,
+      platforms: v.parent_platforms.map((platform) => platform.platform.name),
       img: v.background_image,
-      genros: v.genres.map(g => g.name)
+      genres: v.genres.map(g => g.name)
     }
     return videogame;
   })
@@ -28,6 +27,6 @@ function fecthAPIGamesFinal(datos) {
 }
 
 module.exports = {
-  fecthAPIGamesFinal,
+  datosTraidosDeLaApi,
   fecthAPIGames,
 };
