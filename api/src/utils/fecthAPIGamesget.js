@@ -17,7 +17,7 @@ function datosTraidosDeLaApi(datos) {
       id: v.id,
       name: v.name,
       rating: v.rating,
-      platforms: v.parent_platforms.map((platform) => platform.platform.name),
+      platforms: v.platforms.map((p) => p.platform.name),
       img: v.background_image,
       genres: v.genres.map(g => g.name)
     }
