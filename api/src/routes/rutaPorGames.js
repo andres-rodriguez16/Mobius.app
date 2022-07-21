@@ -25,8 +25,9 @@ router.get("/", async (req, res) => {
           const resultsConQuince = peticionPorQuery.data.results.slice(0, 15);
           const extraerDatosNecesarios = datosTraidosDeLaApi(resultsConQuince)
           res.json(extraerDatosNecesarios);
+        }else{
+          res.status(404).json({ message: "Videjuego no encontrado" })
         }
-        res.status(404).json({ status: 404, message: "Videjuego no encontrado" })
       }
     } else {
       const peticion = await fecthAPIGames(`https://api.rawg.io/api/games?key=${YOUR_API_KEY}`, 5);
