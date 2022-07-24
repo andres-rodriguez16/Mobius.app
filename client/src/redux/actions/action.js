@@ -1,7 +1,7 @@
 
-export const GET_VIDEOGAMES = getVideoGames;
-export const GET_VIDEOGAMES_POR_ID = getVideoGamePorId;
-export const GET_VIDEOGAME_POR_SEARCH = getVideoGamePorSearch;
+export const GET_VIDEOGAMES = "GET_VIDEOGAMES";
+export const GET_VIDEOGAMES_POR_ID = "GET_VIDEOGAMES_POR_ID";
+export const GET_VIDEOGAME_POR_SEARCH =  "GET_VIDEOGAME_POR_SEARCH";
 
 export function getVideoGames() {
   return function (dispatch) {
@@ -9,7 +9,7 @@ export function getVideoGames() {
       .then(v => v.json())
       .then(v => {
         dispatch({
-          type: "GET_ VIDEOGAMES",
+          type: GET_VIDEOGAMES,
           payload: v
         });
       })
@@ -23,7 +23,7 @@ export function getVideoGamePorId(id) {
       .then(response => response.json())
       .then(response => {
         dispatch({
-          type: "GET_VIDEOGAMES_POR_ID",
+          type: GET_VIDEOGAMES_POR_ID,
           payload: response
         })
       })
@@ -37,7 +37,7 @@ export function getVideoGamePorSearch(name) {
       .then(response => response.json())
       .then(response => {
         dispatch({
-          type: "GET_VIDEOGAME_POR_SEARCH",
+          type: GET_VIDEOGAME_POR_SEARCH,
           payload: response,
         })
       })
