@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   videoGames: [],
-
+  videoGameDetails: {}
 }
 
 
@@ -16,10 +16,24 @@ function reducerVideoGames(state = initialState, action) {
       ...state,
       videoGames: action.payload
     }
-  } else {
+  }
+  else if (action.type === GET_VIDEOGAMES_POR_ID) {
+    return {
+      ...state,
+      videoGameDetails: action.payload
+    }
+  }
+  else if (action.type === GET_VIDEOGAME_POR_SEARCH) { 
+  return {
+    ...state,
+    videoGames: action.payload
+  }
+
+  }else {
     return {
       ...state
     }
+
   }
 }
 
