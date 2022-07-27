@@ -19,9 +19,12 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { DB } = require('./src/db.js');
+const { añadirALaDb } = require("./src/utils/generos.js")
 
 // Syncing all the models at once.
-DB.sync({ force: true }).then(() => {
+
+DB.sync({ force: false }).then(() => {
+  añadirALaDb() 
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
