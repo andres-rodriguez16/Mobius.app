@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 
 const Details = () => {
   const { id } = useParams();
-  console.log(id, 'id');
   const detailsVideoGames = useSelector(state => state.videoGameDetails);
   const dispatch = useDispatch();
 
@@ -19,22 +18,28 @@ const Details = () => {
       <h1>details</h1>
       <h3>{detailsVideoGames.name}</h3>
       <img src={detailsVideoGames.img} alt='' width={300} height={200} />
-      <p> Descripcion: {detailsVideoGames.description}</p>
+      <p> Descripción: {detailsVideoGames.description}</p>
       <p>Ranting: {detailsVideoGames.rating}</p>
       <p>Fecha de lanzamiento: {detailsVideoGames.released}</p>
-      <p> Generos
+      <section>
+        <p> Generos</p>
         <ul>
           {detailsVideoGames.genres?.map(p => (
-            <li key={p}> {p}</li>
+            <li key={p}>{p}</li>
           ))}
         </ul>
-      </p>
-      Platafromas
-      <ul>
-        {detailsVideoGames.platforms?.map(p => (
-          <li key={p}>{p}</li>
-        ))}
-      </ul>
+      </section>
+      <section>
+        <p>Plataformas</p>
+        <ul>
+          {detailsVideoGames.platforms?.map(p => (
+            <li key={p}>{p}</li>
+          ))}
+        </ul>
+      </section>
+      <button>
+        <a href='/home'>regresar</a>{' '}
+      </button>
     </div>
   );
 };
