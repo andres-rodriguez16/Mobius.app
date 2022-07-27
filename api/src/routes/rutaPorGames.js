@@ -31,8 +31,10 @@ router.get("/", async (req, res) => {
       }
     } else {
       const peticion = await fecthAPIGames(`https://api.rawg.io/api/games?key=${YOUR_API_KEY}`, 5);
+      const peticionDB = await Videogame.findAll();
       let results = datosTraidosDeLaApi(peticion);
-      res.json(results);
+      const allGames = [...results, ...peticionDB]
+      res.json(allGames);
     }
   } catch (error) {
     res.status(500).json({ Error: error });
