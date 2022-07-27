@@ -1,12 +1,29 @@
+
 import {
   GET_VIDEOGAMES,
   GET_VIDEOGAMES_POR_ID,
-  GET_VIDEOGAME_POR_SEARCH
+  GET_VIDEOGAME_POR_SEARCH,
+  GET_GENRES,
+  RATING_SORT,
+  GAMES_SORT,
+  TYPE_GENRO,
+  ORDEN_BY_ALPHA
 } from "./actions/action"
 
 const initialState = {
   videoGames: [],
-  videoGameDetails: {}
+  videoGameDetails: {},
+  genres: [],
+  videoGamesFilter: []
+};
+function ordenSort(a, b){
+  if(a.name > b.name){
+      return 1;
+  }else if(b.name > a.name){
+      return -1
+  }else{
+      return 0;
+  }
 }
 
 
@@ -14,7 +31,8 @@ function reducerVideoGames(state = initialState, action) {
   if (action.type === GET_VIDEOGAMES) {
     return {
       ...state,
-      videoGames: action.payload
+      videoGames: action.payload,
+      videoGamesFilter: action.payload
     }
   }
   else if (action.type === GET_VIDEOGAMES_POR_ID) {
@@ -23,17 +41,73 @@ function reducerVideoGames(state = initialState, action) {
       videoGameDetails: action.payload
     }
   }
-  else if (action.type === GET_VIDEOGAME_POR_SEARCH) { 
-  return {
-    ...state,
-    videoGames: action.payload
-  }
+  else if (action.type === GET_VIDEOGAME_POR_SEARCH) {
+    console.log(action.payload)
+    return {
+      ...state,
+      videoGamesFilter: action.payload
+    }
 
-  }else {
+  } else if (action.type === GET_GENRES) {
+    return {
+      ...state,
+      genres: action.payload
+    }
+  } else if (action.type === GAMES_SORT) {
+    let copy = [...state.videoGames].filter((g) => {
+      if (action.payload === "DB") {
+        return g.id.length === 36;
+      } else {
+        return g.id.length !== 36;
+      }
+    })
+    return {
+      ...state,
+      videoGamesFilter: copy
+    }
+  }
+  else if (action.type === RATING_SORT) {
+    const ratingVideogames = [...state.videoGamesFilter];
+      ratingVideogames.sort((a, b) => {
+        if (a.rating < b.rating) return action.payload === "asc" ? -1 : 1;
+        else if (a.rating > b.rating)
+          return action.payload === "asc" ? 1 : -1;
+        else return 0;
+      });
+      return {
+        ...state,
+        videoGamesFilter: ratingVideogames,
+      };
+  }
+  else if (action.type === TYPE_GENRO) {
+    const allVideoGames = state.videoGames;
+    let generoFilter = action.payload === "All" ? allVideoGames : allVideoGames.filter(el => el.genres?.includes(action.payload))
+    if (generoFilter.length === 0) {
+      generoFilter = [...allVideoGames]
+      alert("no se encotrataron videjuegos, con ese genero")
+    }
+    return {
+      ...state,
+      videoGamesFilter: generoFilter
+    }
+  }
+  else if (action.type === ORDEN_BY_ALPHA ){
+   const orden = [...state.videoGames]
+   if (action.payload === "a-z") {
+    console.log("entro A-z")
+    orden.sort(ordenSort)
+   }else if (action.payload === "z-a") {
+    orden.sort(ordenSort).reverse()
+   }
+    return {
+      ...state,
+      videoGamesFilter: orden,
+    };
+  }
+  else {
     return {
       ...state
     }
-
   }
 }
 
