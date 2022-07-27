@@ -8,19 +8,17 @@ const router = Router();
 router.get("/:idVi", async (req, res) => {
 
   const { idVi } = req.params;
+  //console.log(idVi)
   try {
-    let id = Number(idVi);
-    if (id) {
+    if (idVi.length !== 36) {
       const result = await getGameId(idVi)
       res.json(result) 
-    } else {
+    } 
+   else {
       const busquefaDB = await Videogame.findByPk(idVi,{
-        include : {
-          model: Genero,
-          through : {attributes: []},
-        }
+        include : Genero
       })
-      res.send("funciona")
+      res.send(busquefaDB)
     }
   } catch (error) {
     res.status(404).json({ msg: error.message || error })
