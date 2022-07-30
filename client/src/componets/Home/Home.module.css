@@ -1,6 +1,10 @@
+
+
 .card{
-  font-size: medium;
-}
-.card{
-  background-color: rgb(36, 8, 100);
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 15px;
 }
