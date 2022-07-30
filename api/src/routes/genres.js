@@ -8,7 +8,6 @@ const router = Router();
 router.get("/", async (req, res) => {
   try {
     let encotrarGeneros = await Genero.findAll()
-    console.log(encotrarGeneros)
    res.send(encotrarGeneros)
   } catch (error) {
     res.json({error : error})
