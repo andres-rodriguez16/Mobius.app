@@ -1,3 +1,4 @@
+import axios from "axios"
 
 export const GET_VIDEOGAMES = "GET_VIDEOGAMES";
 export const GET_VIDEOGAMES_POR_ID = "GET_VIDEOGAMES_POR_ID";
@@ -7,6 +8,8 @@ export const RATING_SORT = "RATING_SORT";
 export const GAMES_SORT= "GAMES_SORT";
 export const TYPE_GENRO = "TYPE_GENRO";
 export const ORDEN_BY_ALPHA = "ORDEN_BY_ALPHA";
+
+
 
 export function getVideoGames() {
   return function (dispatch) {
@@ -46,7 +49,7 @@ export function getVideoGamePorSearch(name) {
           payload: response,
         })
       })
-      .catch(e => console.log(e))
+      .catch(alert("no se encotro resultados"))
   }
 }
 
@@ -63,6 +66,14 @@ export function getGenres() {
       .catch(e => console.log(e))
   }
 }
+
+export function postVideoGame(payload){
+  return async function(dispatch){
+    const response = await axios.post(`http://localhost:3001/videogames/`, payload)
+    console.log(response)
+    return response;
+  }
+} 
 
 export function ratingSort(orden){
 
