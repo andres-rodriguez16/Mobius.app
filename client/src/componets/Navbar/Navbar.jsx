@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getVideoGames} from '../../redux/actions/action';
+import s from './Navbar.module.css';
 
 
 const NavBar = () => {
@@ -14,7 +15,7 @@ const NavBar = () => {
    
   return (
     <header className='navBar'>
-      <h1>VideoGames</h1>
+      <h1 className={s.header__title} >Möbius</h1>
       <nav>
         <ul className='list'>
           <li className='list-item'>
