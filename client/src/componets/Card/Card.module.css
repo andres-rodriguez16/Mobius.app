@@ -1,6 +1,13 @@
+.Card{
+  height: 200;
+  width: 200;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+}
 
 .image{
-  width: 300px;
+  width: 200px;
   height: 200px;
   display: flex;
 }
