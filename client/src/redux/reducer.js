@@ -42,10 +42,16 @@ function reducerVideoGames(state = initialState, action) {
     }
   }
   else if (action.type === GET_VIDEOGAME_POR_SEARCH) {
-    console.log(action.payload)
-    return {
-      ...state,
-      videoGamesFilter: action.payload
+
+    
+    if (!action.payload.error) {
+      return {
+        ...state,
+        videoGamesFilter: action.payload
+      }
+    }
+    return{
+       ...state,
     }
 
   } else if (action.type === GET_GENRES) {
@@ -53,7 +59,13 @@ function reducerVideoGames(state = initialState, action) {
       ...state,
       genres: action.payload
     }
-  } else if (action.type === GAMES_SORT) {
+  }
+  else if (action.type === "Post_VideoGame"){
+    return {
+      ...state,
+    }
+  } 
+  else if (action.type === GAMES_SORT) {
     let copy = [...state.videoGames].filter((g) => {
       if (action.payload === "DB") {
         return g.id.length === 36;
