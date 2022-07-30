@@ -70,7 +70,6 @@ export function getGenres() {
 export function postVideoGame(payload){
   return async function(dispatch){
     const response = await axios.post(`http://localhost:3001/videogames/`, payload)
-    console.log(response)
     return response;
   }
 } 
