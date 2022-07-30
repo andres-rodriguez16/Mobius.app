@@ -4,7 +4,7 @@ const { Router } = require("express")
 const router = Router();
 const { YOUR_API_KEY } = process.env;
 const { datosTraidosDeLaApi, fecthAPIGames } = require("../utils/fecthAPIGamesget")
-const {Videogame } = require("../db")
+const { Videogame, Genero } = require("../db")
 const axios = require("axios")
 
 
@@ -25,13 +25,21 @@ router.get("/", async (req, res) => {
           const resultsConQuince = peticionPorQuery.data.results.slice(0, 15);
           const extraerDatosNecesarios = datosTraidosDeLaApi(resultsConQuince)
           res.json(extraerDatosNecesarios);
-        }else{
-          res.status(404).json({ message: "Videjuego no encontrado" })
+        } else {
+          res.status(404).json({ error: "Videojuego no encontrado" })
         }
       }
     } else {
       const peticion = await fecthAPIGames(`https://api.rawg.io/api/games?key=${YOUR_API_KEY}`, 5);
-      const peticionDB = await Videogame.findAll();
+      const peticionDB = await Videogame.findAll({
+        include: {
+          model: Genero,
+          through: {
+            attributes:
+              [],
+          }
+        }
+      });
       let results = datosTraidosDeLaApi(peticion);
       const allGames = [...results, ...peticionDB]
       res.json(allGames);
@@ -46,6 +54,7 @@ router.post("/", async (req, res) => {
 
   let { name, description, rating, platforms, genres, released } = req.body;
   if (!name || !description || !platforms) {
+    
     res.status(400).send("Invalid information to continue with the request")
   }
   try {
@@ -57,9 +66,11 @@ router.post("/", async (req, res) => {
         rating,
         platforms,
         released,
+
       })
+    
       await gameCreate.addGenero(genres);
-      res.json("Success")
+      res.json(gameCreate)
     }
   } catch (error) {
     throw (error)
