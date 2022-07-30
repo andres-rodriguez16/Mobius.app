@@ -7,18 +7,19 @@ import { Link } from 'react-router-dom';
 import spinner from '../../media/spinner.svg';
 import Paginado from '../Paginado/Paginado';
 import Search from '../Search/Search';
-
+import style from "./Home.module.css"
 
 
 const Home = () => {
   const dispatch = useDispatch();
   const videoGames = useSelector(state => state.videoGamesFilter);
+
   const genres = useSelector(state => state.genres)
   const [actualPage, setActualPage] = useState(1);
   const [videogamesPorPagina, setvideogamesPorPagina] = useState(15);
-  const indeceDelUltimoVideogame = actualPage * videogamesPorPagina; //? 1 * 15 = 15
-  const indeceDelPrimerVideogame = indeceDelUltimoVideogame - videogamesPorPagina; // ? 15 - 15 = 0  
-  const actualesVideogames = videoGames.slice(indeceDelPrimerVideogame, indeceDelUltimoVideogame); // ? 
+  const indeceDelUltimoVideogame = actualPage * videogamesPorPagina; 
+  const indeceDelPrimerVideogame = indeceDelUltimoVideogame - videogamesPorPagina; 
+  const actualesVideogames = videoGames?.slice(indeceDelPrimerVideogame, indeceDelUltimoVideogame)  
   
 
   const paginado = (numeroDePaginada) => {
@@ -27,13 +28,10 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getVideoGames());
-   dispatch(getGenres())
+    dispatch(getGenres())
   }, [dispatch]);
 
-  // useEffect(()=>{
-  //   dispatch(getGenres())
-  // }, [])  
-
+ 
 function handleOnGames (e){
    dispatch(ordenPorGames(e.target.value))
 }
@@ -50,7 +48,6 @@ function handleFiltroPorAlpha (e){
 }
   return (
     <div>
-
       <h1>Home</h1>
       <div>
         <select onChange={(e) => handleFiltroPorRating(e)}>
@@ -83,15 +80,16 @@ function handleFiltroPorAlpha (e){
        paginado={paginado}
       />
       <Search setActualPage={setActualPage} />
-      {actualesVideogames.length ? (
+      {actualesVideogames.length ? 
         actualesVideogames?.map(v => {
+          let imgDefault = "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2021/02/30-mejores-heroes-ultimos-30-anos-2243371.jpg?itok=1iWouJJI"
           return (
-            <div className='card' key={v.id}>
+            <div className={style.Card} key={v.id}>
               <Link to={'/home/' + v.id} key={v.id}>
                 <Card
                   name={v.name}
                   genres={v.genres}
-                  image={v.img}
+                  image={v.img ? v.img : imgDefault}
                   key={v.id}
                   rating={v.rating}
                 />
@@ -99,9 +97,9 @@ function handleFiltroPorAlpha (e){
             </div>
           );
         })
-      ) : 
+      : 
         <div>
-          <img src={spinner} alt='' />
+          <img src={spinner} alt='' /> 
         </div>
       }
     </div>
