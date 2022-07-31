@@ -42,14 +42,13 @@ function reducerVideoGames(state = initialState, action) {
     }
   }
   else if (action.type === GET_VIDEOGAME_POR_SEARCH) {
-
-    
     if (!action.payload.error) {
       return {
-        ...state,
+        ...state, 
         videoGamesFilter: action.payload
       }
     }
+    
     return{
        ...state,
     }
@@ -106,7 +105,6 @@ function reducerVideoGames(state = initialState, action) {
   else if (action.type === ORDEN_BY_ALPHA ){
    const orden = [...state.videoGames]
    if (action.payload === "a-z") {
-    console.log("entro A-z")
     orden.sort(ordenSort)
    }else if (action.payload === "z-a") {
     orden.sort(ordenSort).reverse()
