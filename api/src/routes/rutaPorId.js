@@ -8,7 +8,6 @@ const router = Router();
 router.get("/:idVi", async (req, res) => {
 
   const { idVi } = req.params;
-  //console.log(idVi)
   try {
     if (idVi.length !== 36) {
       const result = await getGameId(idVi)
