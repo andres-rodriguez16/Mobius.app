@@ -11,19 +11,24 @@ async function fecthAPIGames(url, count) {
     return error;
   }
 }
+
 function datosTraidosDeLaApi(datos) {
-  let results = datos.map(v => {
-    let videogame = {
-      id: v.id,
-      name: v.name,
-      rating: v.rating,
-      platforms: v.platforms.map((p) => p.platform.name),
-      img: v.background_image,
-      genres: v.genres.map(g => g.name)
-    }
-    return videogame;
-  })
-  return results;
+  try {
+    let results = datos.map(v => {
+      let videogame = {
+        id: v.id,
+        name: v.name,
+        rating: v.rating,
+        platforms: v.platforms?.map((p) => p.platform.name),
+        img: v.background_image,
+        genres: v.genres?.map(g => g.name)
+      }
+      return videogame;
+    })
+    return results;
+  } catch (error) {
+    return error;
+  }
 }
 
 module.exports = {
