@@ -14,7 +14,7 @@ const NavBar = () => {
   }, [dispatch]); 
    
   return (
-    <header className='navBar'>
+    <header className={s.navBar}>
       <h1 className={s.header__title} >Möbius</h1>
       <nav>
         <ul className='list'>
