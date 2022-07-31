@@ -2,8 +2,8 @@ const axion = require("axios")
 const { YOUR_API_KEY } = process.env;
 
 async function getGameId(idVi) {
-
-  const searchPorId = await axion.get(`https://api.rawg.io/api/games/${idVi}?key=${YOUR_API_KEY}`)
+  try {
+    const searchPorId = await axion.get(`https://api.rawg.io/api/games/${idVi}?key=${YOUR_API_KEY}`)
 
   const game = {
     id : searchPorId.data.id,
@@ -16,5 +16,9 @@ async function getGameId(idVi) {
     platforms :  searchPorId.data.platforms?.map(p => p.platform.name)
   };
   return game;
+  } catch (error) {
+    return error;
+  }
+  
 }
 module.exports = { getGameId };
