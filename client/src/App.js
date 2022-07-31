@@ -15,11 +15,11 @@ function App() {
         <div className={style.transparency}>
           <NavBar />
           <Route exact path="/" component={LandingPage} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/home/:id" component={Details} />
+          <Route exact path="/createVideogame" component={Formulario} />
         </div>
       </div>
-      <Route exact path="/home" component={Home} />
-      <Route exact path="/home/:id" component={Details} />
-      <Route exact path="/createVideogame" component={Formulario} />
     </React.Fragment>
   );
 }
