@@ -23,7 +23,7 @@ router.get("/", async (req, res) => {
         const peticionPorQuery = await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${YOUR_API_KEY}`);
         if (peticionPorQuery.data.results.length) {
           const resultsConQuince = peticionPorQuery.data.results.slice(0, 15);
-          const extraerDatosNecesarios = datosTraidosDeLaApi(resultsConQuince)
+          const extraerDatosNecesarios = datosTraidosDeLaApi(resultsConQuince);
           res.json(extraerDatosNecesarios);
         } else {
           res.status(404).json({ error: "Videojuego no encontrado" })
@@ -51,13 +51,11 @@ router.get("/", async (req, res) => {
 })
 
 router.post("/", async (req, res) => {
-
-  let { name, description, rating, platforms, genres, released } = req.body;
-  if (!name || !description || !platforms) {
-    
-    res.status(400).send("Invalid information to continue with the request")
-  }
   try {
+    let { name, description, rating, platforms, genres, released } = req.body;
+    if (!name || !description || !platforms) {
+      res.status(400).send("Invalid information to continue with the request")
+    }
     if (typeof name === "string" && typeof description === "string" && typeof rating === "number"
       && Array.isArray(platforms) && Array.isArray(genres)) {
       let gameCreate = await Videogame.create({
@@ -68,7 +66,6 @@ router.post("/", async (req, res) => {
         released,
 
       })
-    
       await gameCreate.addGenero(genres);
       res.json(gameCreate)
     }
