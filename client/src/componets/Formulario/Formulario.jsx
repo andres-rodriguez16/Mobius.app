@@ -73,7 +73,6 @@ const Formulario = () => {
     e.preventDefault();
     let encotrarID = generos.filter(g => input.genres.includes(g.name));
     encotrarID = encotrarID.map(t => t.id);
-    console.log(errors)
     if (errors.name || errors.description) {
       return alert("complete los input correctamente")
     }
