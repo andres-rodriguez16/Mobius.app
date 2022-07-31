@@ -44,12 +44,16 @@ export function getVideoGamePorSearch(name) {
     fetch(`http://localhost:3001/videogames?name=${name}`)
       .then(response => response.json())
       .then(response => {
+       if (!response.error) {
         dispatch({
           type: GET_VIDEOGAME_POR_SEARCH,
           payload: response,
         })
+       }else{
+         return alert("no se encotraron resultados")
+       } 
       })
-      .catch(alert("no se encotro resultados"))
+      .catch( e => console.log(e))
   }
 }
 
