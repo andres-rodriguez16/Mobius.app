@@ -22,6 +22,10 @@ router.get("/", async (req, res) => {
       } else {
         const peticionPorQuery = await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${YOUR_API_KEY}`);
         if (peticionPorQuery.data.results.length) {
+            if (peticionPorQuery.data.results.length < 15 ) {
+               const menosDeQuince = datosTraidosDeLaApi(peticionPorQuery.data.results)
+               res.json(menosDeQuince)
+            }
           const resultsConQuince = peticionPorQuery.data.results.slice(0, 15);
           const extraerDatosNecesarios = datosTraidosDeLaApi(resultsConQuince);
           res.json(extraerDatosNecesarios);
