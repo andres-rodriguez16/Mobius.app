@@ -4,13 +4,18 @@
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  margin-top: 50px;
+  padding-left: 200px;
 }
 
 .slogan {
   font-family: 'Montserrat', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  color: #303435
+  color: #303435;
+  width: 500px;
+  margin-top: 20px;
+  padding-left: 40px;
 }
 
 .description {
@@ -18,5 +23,14 @@
   font-weight: 400;
   font-size: 20px;
   color: #303435;
+  margin-top: 20px;
+  padding-left: 40px;
 }
+
+.landing {
+  display: flex;
+  height: 500px;
+  
+}
+
 

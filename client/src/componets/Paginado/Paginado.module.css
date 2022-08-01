@@ -1,0 +1,16 @@
+
+.paginado{
+  
+  text-align: center;
+  padding-top: 15px;
+  padding-left: 10px;;
+
+}
+.paginado button{
+  width: 70px;
+  padding-top: 10px;
+  cursor: pointer;
+  background-color: rgb(255, 81, 0);
+  border-radius: 5px;
+}
+

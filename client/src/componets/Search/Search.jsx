@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { getVideoGamePorSearch } from "../../redux/actions/action";
-
+import s from "./Search.module.css"
 const Search = ({setActualPage}) =>{
  const [name, setName] = useState("");
  const dispacth = useDispatch();
@@ -19,8 +19,7 @@ function handleSubmit(e){
 
   return (
      <div>
-       <h2>Buscador</h2>
-       <div>
+       <div className={s.Search}>
             <label className="label" htmlFor="title">
             </label>
             <input

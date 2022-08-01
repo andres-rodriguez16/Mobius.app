@@ -1,10 +1,30 @@
-
-
-.card{
-  justify-content: center;
+.list__cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 25px;
-  grid-row-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 5vw;
+  padding: 0;
+  list-style-type: none;
+}
+
+.list__cards a{
+  background-image: linear-gradient(rgba(224, 1, 253, 0.925), rgba(255, 60, 0, 0.959));
+  border-radius: 30px;
+}
+.home {
+  height: 100%;
+}
+.filter{
+  font-size: larger;
+  margin-left: 20px;
+}
+.barras{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+.loading{
+  text-align: center
 }
