@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { postVideoGame, getGenres } from '../../redux/actions/action';
 import platforms from './Plataformas';
-
+import s from './Formulario.module.css';
 const validarNombre = {
   name: /^[A-Z0-9a-zÑñÁáÉéÍíÓóÚúÜü:\s]+$/,
 };
@@ -12,18 +12,18 @@ function validation(input) {
   const errores = {};
   if (!input.name) {
     errores.name = 'no escribiste el nombre';
-  }else if (!validarNombre.name.test(input.name)) {
+  } else if (!validarNombre.name.test(input.name) ) {
     errores.name = 'El nombre es incorrecto';
   }
   if (!input.description) {
     errores.description = 'Este campo no puede estar vacio';
-  } 
- 
-  if (input.genres.length === 0) {
-    errores.genres = 'Este campo no puede estar vacio'
   }
-  if (input.platforms.length === 0 && input.platforms.length < 1) {
-    errores.platforms = 'Este campo no puede estar vacio'
+
+  if (input.genres.length === 0) {
+    errores.genres = 'Este campo no puede estar vacio';
+  }
+  if (input.platforms.length === 0) {
+    errores.platforms = 'Este campo no puede estar vacio';
   }
   return errores;
 }
@@ -40,7 +40,7 @@ const Formulario = () => {
     genres: [],
     platforms: [],
   });
-  
+
   function handlerChange(e) {
     setInput({
       ...input,
@@ -59,6 +59,12 @@ const Formulario = () => {
       ...input,
       genres: [...input.genres, e.target.value],
     });
+    setErrors(
+      validation({
+        ...input,
+        genres: [...input.platforms, e.target.value],
+      })
+    );
   }
 
   function handlerCkeckPlataformas(e) {
@@ -66,7 +72,12 @@ const Formulario = () => {
       ...input,
       platforms: [...input.platforms, e.target.value],
     });
-    
+    setErrors(
+      validation({
+        ...input,
+        platforms: [...input.platforms, e.target.value],
+      })
+    );
   }
 
   function handlerSubmit(e) {
@@ -74,13 +85,13 @@ const Formulario = () => {
     let encotrarID = generos.filter(g => input.genres.includes(g.name));
     encotrarID = encotrarID.map(t => t.id);
     if (errors.name || errors.description) {
-      return alert("complete los input correctamente")
+      return alert('complete los input correctamente');
     }
     if (!input.genres.length) {
-      return alert("tiene que agregar generos")
-   }
+      return alert('tiene que agregar generos');
+    }
     if (!input.platforms.length) {
-      return alert("tiene que agregar plataformas")
+      return alert('tiene que agregar plataformas');
     }
     let postfinal = {
       name: input.name,
@@ -102,32 +113,34 @@ const Formulario = () => {
     alert('Videojuego creado correctamente');
   }
 
-  function handleDeletePlatoformas(e){
+  function handleDeletePlatoformas(e) {
     setInput({
-        ...input,
-         platforms:input.platforms.filter(t=>t !== e)
-    })
-}
-function handleDeleteGeneros(e){
-  setInput({
-    ...input,
-     genres:input.genres.filter(t=>t !== e)//manejador del boton X de temperament
-})
-}
+      ...input,
+      platforms: input.platforms.filter(t => t !== e),
+    });
+  }
+  function handleDeleteGeneros(e) {
+    setInput({
+      ...input,
+      genres: input.genres.filter(t => t !== e), //manejador del boton X de temperament
+    });
+  }
   useEffect(() => {
     dispatch(getGenres());
   }, [dispatch]);
 
-
   return (
+  
     <div>
       <Link to='/home'>
-        <button>Volver</button>
+        <button className={s.button__volver}>Volver</button>
       </Link>
-      <h2>Crea tu Videojuego!</h2>
+      <h2 className={s.h1__create}>Crea tu Videojuego!</h2>
+      <div className={s.container}>
       <form onSubmit={e => handlerSubmit(e)}>
-        <div>
-          <label>Nombre</label>
+        <div className={s.input__all}>
+        <div className={s.input}>
+          <h4>Nombre</h4>
           <input
             type='text'
             value={input.name}
@@ -135,11 +148,11 @@ function handleDeleteGeneros(e){
             required
             placeholder='Ej : call of dutty'
             onChange={e => handlerChange(e)}
-          />
+            />
           {errors.name ? <p>{errors.name}</p> : null}
         </div>
-        <div>
-          <label>Descripción</label>
+        <div className={s.input}>
+          <h4>Descripción</h4>
           <input
             type='text'
             value={input.description}
@@ -147,20 +160,20 @@ function handleDeleteGeneros(e){
             required
             placeholder='Ej: este es juego se trata...'
             onChange={e => handlerChange(e)}
-          />
+            />
           {errors.description && <p>{errors.description}</p>}
         </div>
-        <div>
-          <label>Fecha de lanzamiento</label>
+        <div className={s.input}>
+          <h4>Fecha de lanzamiento</h4>
           <input
             type='Date'
             value={input.released}
             name='released'
             onChange={e => handlerChange(e)}
-          />
+            />
         </div>
-        <div>
-          <label>Rating</label>
+        <div className={s.input}>
+          <h4>Rating</h4>
           <input
             type='Number'
             value={input.rating}
@@ -169,8 +182,10 @@ function handleDeleteGeneros(e){
             max={5}
             placeholder={'1-5'}
             onChange={e => handlerChange(e)}
-          />
+            />
         </div>
+        {errors.rating && <p>{errors.rating}</p>}
+      <div className={s.select}>   
         <div>
           <h3>Generos :</h3>
           <select name='Genros' onChange={e => handlerCkeckGenros(e)}>
@@ -181,20 +196,23 @@ function handleDeleteGeneros(e){
                 </option>
               );
             })}
-           
           </select>
-           
           {input.genres.map((el, index) => (
             <div className='divTem' key={index + 1}>
               <p>{el}</p>
-              <button className='botonX' type='button' onClick={() => handleDeleteGeneros(el)}>
+              <button
+                className='botonX'
+                type='button'
+                onClick={() => handleDeleteGeneros(el)}
+                >
                 X
               </button>
             </div>
           ))}
         </div>
-        <div>
-          <h3>Plataformas </h3>
+        {errors.genres ? <p>{errors.genres}</p> : null}
+        <div className={s.select}>
+          <h3>Plataformas :</h3>
           <select name='Platafromas' onChange={e => handlerCkeckPlataformas(e)}>
             {platforms.map((g, index) => {
               return (
@@ -207,14 +225,22 @@ function handleDeleteGeneros(e){
           {input.platforms.map((el, index) => (
             <div className='divTem' key={index + 1}>
               <p>{el}</p>
-              <button className='botonX' type='button' onClick={() => handleDeletePlatoformas(el)}>
+              <button
+                className='botonX'
+                type='button'
+                onClick={() => handleDeletePlatoformas(el)}
+                >
                 X
               </button>
             </div>
           ))}
+          </div>
+          {errors.platforms ? <p>{errors.platforms}</p> : null}
         </div>
-        <button type='submit'>Crear VideoGames</button>
-      </form>
+          </div>
+        <button type='submit' className={s.button__submit}>Crear VideoGames</button>
+      </form> 
+        </div> 
     </div>
   );
 };

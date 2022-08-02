@@ -9,8 +9,9 @@ const Card = ({ name, genres, image, rating }) => {
         <div >
           <h3 className={style.card__title}>{name}</h3>
           <div class={style.card__description}>
-          <p>{genres}</p>
-          <p >{rating}</p>
+            {genres?.map((g, index )=>{ 
+              return  g.name ? <p key={g.id}>{g.name}</p> : <p key={index + 1} >{g}</p>})}
+          <p>{rating}</p>
           </div>
         </div>
       </div>

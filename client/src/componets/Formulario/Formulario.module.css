@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=MuseoModerno:wght@400;700&display=swap');
+
+.button__volver{
+  color: #FE7F3C;
+  border: #FE7F3C;
+  font-family:  'MuseoModerno', cursive;
+  font-size: large;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 10px 50px;
+  margin-top: 5px;
+}
+.h1__create{
+  color: #FE7F3C;
+  text-align:center;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  background-size: 25rem;
+  margin: 1rem auto;
+  flex-direction: column;
+  max-width: 600px;
+  padding: 15px ;
+  max-height: 70p;
+}
+.button__submit{
+  display: flex;
+  margin-left: 225px;
+  margin-right: 225px;
+  padding-top: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 0;
+  font-size: medium;
+  color: #FE7F3C;
+}
+.input__all input{
+  
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: medium;
+  width: 80%;
+  box-sizing: border-box; 
+
+}
+.input__all {
+  background-color: rgb(248, 248, 242);
+  margin: 1rem auto;
+  padding: 15px ;
+  text-align: center;
+  border-radius: 20px;
+  background-size: 25rem;
+  max-width: 600px;
+  box-shadow: 0 4px 20px rgb(37, 37, 36);
+  display: flex;
+  flex-direction: column;
+}
+.input{ 
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+.input input:hover{
+  background-color: aliceblue;
+}
+.select{
+  background-color: rgb(248, 248, 242);
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.select select{
+  font-size: medium;
+  padding: 15px;
+  margin-left: 20px;
+  text-align: center;
+ 
+}

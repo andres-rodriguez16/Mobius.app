@@ -29,23 +29,25 @@ body {
 }
 
 .card__description{
-  padding: 0 2em 2em;
+  padding: 0 2em 1em;
   margin: 0;
   color: #303435;
   font-family: 'Montserrat', sans-serif; 
-  display: -webkit-box;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+  flex-direction: column;
 }
 .card__title{
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
   margin: 0 0 .3em;
   color: #303435;
- 
+  text-align: center;
+
 }
 
-.card:hover .card__header-text {
+.card:hover {
   transform: translateY(0);
 }

@@ -1,10 +1,12 @@
 
 .paginado{
-  
   text-align: center;
   padding-top: 15px;
-  padding-left: 10px;;
+  padding-left: 10px;
 
+}
+.paginado :focus{
+  background-color: antiquewhite; 
 }
 .paginado button{
   width: 70px;
@@ -12,5 +14,7 @@
   cursor: pointer;
   background-color: rgb(255, 81, 0);
   border-radius: 5px;
+  border: 0;
+  margin-left: 5px;
 }
 

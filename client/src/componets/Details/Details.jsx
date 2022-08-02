@@ -29,9 +29,9 @@ const Details = () => {
       <section  className={s.genres}>
         <p>Generos :</p>
         <ul>
-          {detailsVideoGames.genres?.map(p => (
+          {detailsVideoGames.genres? detailsVideoGames.genres?.map(p => (
             <li key={p}>{p}</li>
-          )) || detailsVideoGames.Generos?.map(p => (
+          )) : detailsVideoGames.Generos?.map(p => (
             <li key={p.id}>{p.name}</li>
           ))}
         </ul>

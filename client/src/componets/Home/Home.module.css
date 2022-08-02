@@ -5,10 +5,11 @@
   margin: 4rem 5vw;
   padding: 0;
   list-style-type: none;
+  color: black;
 }
 
 .list__cards a{
-  background-image: linear-gradient(rgba(224, 1, 253, 0.925), rgba(255, 60, 0, 0.959));
+  background-color: aliceblue;
   border-radius: 30px;
 }
 .home {
@@ -26,5 +27,5 @@
 }
 
 .loading{
-  text-align: center
+  text-align: center;
 }

@@ -24,12 +24,8 @@ const Home = () => {
   const [actualPage, setActualPage] = useState(1);
   const [videogamesPorPagina, setvideogamesPorPagina] = useState(15);
   const indeceDelUltimoVideogame = actualPage * videogamesPorPagina;
-  const indeceDelPrimerVideogame =
-    indeceDelUltimoVideogame - videogamesPorPagina;
-  const actualesVideogames = videoGames?.slice(
-    indeceDelPrimerVideogame,
-    indeceDelUltimoVideogame
-  );
+  const indeceDelPrimerVideogame = indeceDelUltimoVideogame - videogamesPorPagina;
+  const actualesVideogames = videoGames?.slice(indeceDelPrimerVideogame,indeceDelUltimoVideogame);
 
   const paginado = numeroDePaginada => {
     setActualPage(numeroDePaginada);
@@ -46,6 +42,7 @@ const Home = () => {
 
   function handleFiltroPorGenro(e) {
     dispatch(filtroPorGenero(e.target.value));
+    setActualPage(1);
   }
 
   function handleFiltroPorRating(e) {
@@ -102,7 +99,7 @@ const Home = () => {
               <Link to={'/home/' + v.id} key={v.id}>
                 <Card
                   name={v.name}
-                  genres={v.genres}
+                  genres={v.genres ? v.genres : v.Generos }
                   image={v.img ? v.img : imgDefault}
                   key={v.id}
                   rating={v.rating}
