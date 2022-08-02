@@ -17,15 +17,14 @@ const initialState = {
   videoGamesFilter: []
 };
 function ordenSort(a, b){
-  if(a.name > b.name){
+  if(a.name.toUpperCase() > b.name.toUpperCase()){
       return 1;
-  }else if(b.name > a.name){
+  }else if(b.name.toUpperCase() > a.name.toUpperCase()){
       return -1
   }else{
       return 0;
   }
 }
-
 
 function reducerVideoGames(state = initialState, action) {
   if (action.type === GET_VIDEOGAMES) {
@@ -93,6 +92,7 @@ function reducerVideoGames(state = initialState, action) {
   else if (action.type === TYPE_GENRO) {
     const allVideoGames = state.videoGames;
     let generoFilter = action.payload === "All" ? allVideoGames : allVideoGames.filter(el => el.genres?.includes(action.payload))
+    console.log(generoFilter)
     if (generoFilter.length === 0) {
       generoFilter = [...allVideoGames]
       alert("no se encotrataron videjuegos, con ese genero")
