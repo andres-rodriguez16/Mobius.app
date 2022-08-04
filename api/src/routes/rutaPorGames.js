@@ -56,10 +56,12 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    let { name, description, rating, platforms, genres, released } = req.body;
+    let { name, description, rating, platforms, genres, released, img } = req.body;
     if (!name || !description || !platforms) {
       res.status(400).send("Invalid information to continue with the request")
     }
+    if (!img) img = 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2021/02/30-mejores-heroes-ultimos-30-anos-2243371.jpg?itok=1iWouJJI';
+
     if (typeof name === "string" && typeof description === "string" && typeof rating === "number"
       && Array.isArray(platforms) && Array.isArray(genres)) {
       let gameCreate = await Videogame.create({
@@ -68,7 +70,7 @@ router.post("/", async (req, res) => {
         rating,
         platforms,
         released,
-
+        img
       })
       await gameCreate.addGenero(genres);
       res.json(gameCreate)
@@ -76,6 +78,39 @@ router.post("/", async (req, res) => {
   } catch (error) {
     throw (error)
   }
+})
+
+router.delete("/:id", async (req ,res, next) => {
+  try {
+    let {id} = req.params;
+    await Videogame.destroy({
+      where :{
+        id : id
+      }
+    })
+    res.send("Videojuego eliminado correctamente")
+  } catch (error) {
+     next(error)
+  }
+});
+
+router.put("/:id", async (req ,res, next) => {
+ try {
+  let {id} = req.params;
+  let {name, rating} = req.body;
+   await Videogame.update({
+     name : name,
+     rating : rating
+   },
+   {
+     where : {
+       id : id
+     }
+   })
+   res.send("videogames actualizado")
+ } catch (error) {
+  
+ }
 
 })
 module.exports = router;

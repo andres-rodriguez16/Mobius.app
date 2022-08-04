@@ -4,8 +4,8 @@
   color: #FE7F3C;
   font-family: 'MuseoModerno', cursive;
   font-weight: 400;
-  padding-left: 40px;
-  margin-top: 10px;
+  padding-left: 50px;
+  margin-top: 35px;
 }
 
 .navBar {
@@ -14,17 +14,17 @@
 .list{
   list-style: none;
   display: flex; 
-  justify-self: center;
 }
 .list button {
   color: #FE7F3C;
   border: #FE7F3C;
   font-family:  'MuseoModerno', cursive;
-  font-size: large;
   cursor: pointer;
   background-color: transparent;
-  padding: 20px 50px;
-  margin-top: 5px;
+  margin-top: 43px;
+  font-size: 25px;
+  font-weight: 400;
+  padding-left: 370px;
 
 }
 

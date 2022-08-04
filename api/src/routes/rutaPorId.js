@@ -20,7 +20,8 @@ router.get("/:idVi", async (req, res) => {
       res.send(busquefaDB)
     }
   } catch (error) {
-    res.status(404).json({ msg: error.message || error })
+    console.log(error)
+    res.status(404).json("videojuego no encotrado")
   }
 })
 

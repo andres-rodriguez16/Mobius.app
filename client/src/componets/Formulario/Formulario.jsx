@@ -8,6 +8,14 @@ const validarNombre = {
   name: /^[A-Z0-9a-zÑñÁáÉéÍíÓóÚúÜü:\s]+$/,
 };
 
+function validate (input){
+  const patron = new RegExp('^[ñíóáéú a-zA-Z ]+$')
+  const errors = {};
+  if(!input.name){
+      errors.name = "Complete with a recipe name";
+  } else if (!patron.test(input.name)){errors.name = "The name cannot contain numbers"}
+}
+
 function validation(input) {
   const errores = {};
   if (!input.name) {
@@ -55,10 +63,16 @@ const Formulario = () => {
   }
 
   function handlerCkeckGenros(e) {
+   if (!input.genres.includes(e.target.value)) {
     setInput({
       ...input,
       genres: [...input.genres, e.target.value],
     });
+   }else{
+    setInput({
+      ...input
+    })
+   } 
     setErrors(
       validation({
         ...input,
@@ -68,10 +82,17 @@ const Formulario = () => {
   }
 
   function handlerCkeckPlataformas(e) {
-    setInput({
-      ...input,
-      platforms: [...input.platforms, e.target.value],
-    });
+    if (!input.platforms.includes(e.target.value)) {
+      setInput({
+        ...input,
+        platforms: [...input.platforms, e.target.value],
+      });
+    }else{
+       setInput({
+        ...input
+       })
+    }
+    
     setErrors(
       validation({
         ...input,
@@ -189,6 +210,7 @@ const Formulario = () => {
         <div>
           <h3>Generos :</h3>
           <select name='Genros' onChange={e => handlerCkeckGenros(e)}>
+          <option value="generos">Selección</option>
             {generos.map(g => {
               return (
                 <option value={g.name} key={g.id}>
@@ -199,7 +221,7 @@ const Formulario = () => {
           </select>
           {input.genres.map((el, index) => (
             <div className='divTem' key={index + 1}>
-              <p>{el}</p>
+              <span>{el}</span>
               <button
                 className='botonX'
                 type='button'
@@ -214,6 +236,7 @@ const Formulario = () => {
         <div className={s.select}>
           <h3>Plataformas :</h3>
           <select name='Platafromas' onChange={e => handlerCkeckPlataformas(e)}>
+            <option value="plataformas">Selección</option>
             {platforms.map((g, index) => {
               return (
                 <option value={g} key={index + 1}>
@@ -224,7 +247,7 @@ const Formulario = () => {
           </select>
           {input.platforms.map((el, index) => (
             <div className='divTem' key={index + 1}>
-              <p>{el}</p>
+              <span>{el}</span>
               <button
                 className='botonX'
                 type='button'

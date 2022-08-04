@@ -7,30 +7,39 @@ const Search = ({setActualPage}) =>{
  const [name, setName] = useState("");
  const dispacth = useDispatch();
 
- function handleInputChange(e){
+function handleInputChange(e){
    e.preventDefault();
    setName(e.target.value)
  }
+
 function handleSubmit(e){
   e.preventDefault();
+  if (!name) {
+     alert("Debe ingresar algo")
+  }
   dispacth(getVideoGamePorSearch(name))
   setActualPage(1)
+  setName("")
 }
 
   return (
      <div>
+      <form >
        <div className={s.Search}>
             <label className="label" htmlFor="title">
             </label>
             <input
-              type="text"
-              id="title"
-              autoComplete="off"
-              placeholder="buscar..."
-              onChange={(e) => handleInputChange(e)}
+            className={s.input__search}
+            value={name}
+            type="text"
+            id="title"
+            autoComplete="off"
+            placeholder="buscar..."
+            onChange={(e) => handleInputChange(e)}
             />
              <button type="submit" onClick={(e) => handleSubmit(e)}>BUSCAR</button>
           </div>
+            </form>
       </div>
   )
 }

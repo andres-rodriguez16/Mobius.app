@@ -8,6 +8,7 @@ import {
   filtroPorGenero,
   ratingSort,
   filtroPorAlpha,
+  clearHome
 } from '../../redux/actions/action';
 import Card from '../Card/Card';
 import { Link } from 'react-router-dom';
@@ -19,7 +20,6 @@ import loading from "../../img/loading-icon.gif"
 const Home = () => {
   const dispatch = useDispatch();
   const videoGames = useSelector(state => state.videoGamesFilter);
-
   const genres = useSelector(state => state.genres);
   const [actualPage, setActualPage] = useState(1);
   const [videogamesPorPagina, setvideogamesPorPagina] = useState(15);
@@ -34,6 +34,9 @@ const Home = () => {
   useEffect(() => {
     dispatch(getVideoGames());
     dispatch(getGenres());
+    return function (){
+       dispatch(clearHome())
+    }
   }, [dispatch]);
 
   function handleOnGames(e) {
@@ -47,9 +50,11 @@ const Home = () => {
 
   function handleFiltroPorRating(e) {
     dispatch(ratingSort(e.target.value));
+    setActualPage(1)
   }
   function handleFiltroPorAlpha(e) {
     dispatch(filtroPorAlpha(e.target.value));
+    setActualPage(1)
   }
   return (
     <div className={style.home}>
@@ -93,14 +98,12 @@ const Home = () => {
       {actualesVideogames.length ? (
         <div className={style.list__cards}>
           {actualesVideogames?.map(v => {
-            let imgDefault =
-              'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2021/02/30-mejores-heroes-ultimos-30-anos-2243371.jpg?itok=1iWouJJI';
             return (
               <Link to={'/home/' + v.id} key={v.id}>
                 <Card
                   name={v.name}
-                  genres={v.genres ? v.genres : v.Generos }
-                  image={v.img ? v.img : imgDefault}
+                  genres={v.Generos }
+                  image={v.img }
                   key={v.id}
                   rating={v.rating}
                 />

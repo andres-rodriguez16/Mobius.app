@@ -7,7 +7,9 @@ import {
   RATING_SORT,
   GAMES_SORT,
   TYPE_GENRO,
-  ORDEN_BY_ALPHA
+  ORDEN_BY_ALPHA,
+  CLEAR_DETAILS,
+  CLEAR_HOME
 } from "./actions/action"
 
 const initialState = {
@@ -91,8 +93,17 @@ function reducerVideoGames(state = initialState, action) {
   }
   else if (action.type === TYPE_GENRO) {
     const allVideoGames = state.videoGames;
-    let generoFilter = action.payload === "All" ? allVideoGames : allVideoGames.filter(el => el.genres?.includes(action.payload))
-    console.log(generoFilter)
+    let generoFilter = action.payload === "All" ? allVideoGames : allVideoGames.filter( (el) =>{
+      if (el.id.length === 36) {
+          let bandera = false;
+         el.Generos.forEach(g => 
+             g.name === action.payload? bandera = true : null
+         );
+         return bandera; 
+      }else{
+       return el.Generos?.includes(action.payload)
+      }
+    })
     if (generoFilter.length === 0) {
       generoFilter = [...allVideoGames]
       alert("no se encotrataron videjuegos, con ese genero")
@@ -113,6 +124,16 @@ function reducerVideoGames(state = initialState, action) {
       ...state,
       videoGamesFilter: orden,
     };
+  }else if(action.type === CLEAR_DETAILS){ 
+    return {
+      ...state,
+      videoGameDetails : {}
+    }
+  }else if (action.type === CLEAR_HOME){
+     return {
+      ...state,
+      videoGamesFilter : state.videoGames
+    }
   }
   else {
     return {

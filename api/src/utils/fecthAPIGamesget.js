@@ -21,7 +21,7 @@ function datosTraidosDeLaApi(datos) {
         rating: v.rating,
         platforms: v.platforms?.map((p) => p.platform.name),
         img: v.background_image,
-        genres: v.genres?.map(g => g.name)
+        Generos: v.genres?.map(g => g.name)
       }
       return videogame;
     })

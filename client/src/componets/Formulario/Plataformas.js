@@ -1,6 +1,5 @@
 
 const platforms = [
-  'PC',
   'Xbox Series S/X',
   'PlayStation 4',
   'PlayStation 5',

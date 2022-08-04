@@ -27,6 +27,9 @@ module.exports = (sequelize) => {
     },
     released : {
       type : DataTypes.STRING,
+    },
+    img : {
+      type : DataTypes.TEXT
     }
   },
     {

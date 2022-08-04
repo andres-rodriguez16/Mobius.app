@@ -8,10 +8,12 @@ const Card = ({ name, genres, image, rating }) => {
         <img className={style.image} src={image} alt='' />
         <div >
           <h3 className={style.card__title}>{name}</h3>
-          <div class={style.card__description}>
+          <div className={style.card__description}>
             {genres?.map((g, index )=>{ 
-              return  g.name ? <p key={g.id}>{g.name}</p> : <p key={index + 1} >{g}</p>})}
-          <p>{rating}</p>
+             return  g.name ? <p key={g.id}>{g.name}</p> : <p key={index + 1} >{g}</p>})}
+          </div>
+          <div className={style.rating}>
+          <p>★{rating}</p>
           </div>
         </div>
       </div>

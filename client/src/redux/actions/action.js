@@ -8,7 +8,8 @@ export const RATING_SORT = "RATING_SORT";
 export const GAMES_SORT= "GAMES_SORT";
 export const TYPE_GENRO = "TYPE_GENRO";
 export const ORDEN_BY_ALPHA = "ORDEN_BY_ALPHA";
-
+export const CLEAR_DETAILS = "CLEAR_DETAILS";
+export const CLEAR_HOME = "CLEAR_HOME";
 
 
 export function getVideoGames() {
@@ -71,8 +72,8 @@ export function getGenres() {
   }
 }
 
-export function postVideoGame(payload){
-  return async function(dispatch){
+export function postVideoGame(payload){ 
+  return async function(){
     const response = await axios.post(`http://localhost:3001/videogames/`, payload)
     return response;
   }
@@ -104,5 +105,16 @@ export function filtroPorAlpha(orden){
   return {
      type : ORDEN_BY_ALPHA,
      payload : orden
+  }
+}
+
+export function clearDetails (){
+   return {
+     type: CLEAR_DETAILS
+   }
+}
+export function clearHome (){
+  return {
+    type: CLEAR_HOME
   }
 }

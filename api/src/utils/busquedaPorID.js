@@ -12,7 +12,7 @@ async function getGameId(idVi) {
     img :searchPorId.data.background_image,
     rating :searchPorId.data.rating,
     released : searchPorId.data.released,
-    genres :   searchPorId.data.genres?.map(g => g.name),
+    Generos :   searchPorId.data.genres?.map(g => g.name),
     platforms :  searchPorId.data.platforms?.map(p => p.platform.name)
   };
   return game;
