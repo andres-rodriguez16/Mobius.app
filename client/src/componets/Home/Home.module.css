@@ -18,17 +18,22 @@
 .home {
   height: 200%;
 }
-.filter{
-  font-size: larger;
-  margin-left: 20px;
-}
 .barras{
-  margin-top: 30px;
   display: flex;
   justify-content: center;
-  padding-right: 20px;
+  margin: 15px ;
 }
 
 .loading{
   text-align: center;
+}
+
+.filter select{
+  padding: 5px;
+  border-radius: 10px;
+  margin: 0 4px;
+  background-color:  white;
+  border: 0;
+  color:  #FE7F3C;
+  cursor: pointer;
 }

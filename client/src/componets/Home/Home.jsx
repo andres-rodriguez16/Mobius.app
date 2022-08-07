@@ -8,7 +8,8 @@ import {
   filtroPorGenero,
   ratingSort,
   filtroPorAlpha,
-  clearHome
+  clearHome,
+  ordenFecha
 } from '../../redux/actions/action';
 import Card from '../Card/Card';
 import { Link } from 'react-router-dom';
@@ -41,6 +42,7 @@ const Home = () => {
 
   function handleOnGames(e) {
     dispatch(ordenPorGames(e.target.value));
+    setActualPage(1)
   }
 
   function handleFiltroPorGenro(e) {
@@ -56,6 +58,9 @@ const Home = () => {
     dispatch(filtroPorAlpha(e.target.value));
     setActualPage(1)
   }
+  function handlerFiltroPorFecha(e) {
+    dispatch(ordenFecha(e.target.value))
+  }
   return (
     <div className={style.home}>
       <div className={style.barras}>
@@ -66,13 +71,18 @@ const Home = () => {
           <option value='asc'>Ascendente</option>
           <option value='desc'>Decendente</option>
         </select>
+        <select onChange={e => handlerFiltroPorFecha(e)}>
+          <option value="fecha">Fecha</option>
+          <option value='asc'>Ascendente</option>
+          <option value='desc'>Decendente</option>
+        </select>
         <select onChange={e => handleFiltroPorAlpha(e)}>
           <option value='ordenAlpha'>Alpha</option>
           <option value='a-z'>A-Z</option>
           <option value='z-a'>Z-A</option>
         </select>
         <select onChange={e => handleOnGames(e)}>
-          <option>orden</option>
+          <option>Orden</option>
           <option value='DB'>Creados</option>
           <option value='Api'>Api</option>
         </select>
@@ -106,6 +116,7 @@ const Home = () => {
                   image={v.img }
                   key={v.id}
                   rating={v.rating}
+                  released={v.released}
                 />
               </Link>
             );
