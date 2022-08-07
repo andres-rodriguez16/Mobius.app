@@ -21,7 +21,8 @@ function datosTraidosDeLaApi(datos) {
         rating: v.rating,
         platforms: v.platforms?.map((p) => p.platform.name),
         img: v.background_image,
-        Generos: v.genres?.map(g => g.name)
+        Generos: v.genres?.map(g => g.name),
+        released : Number(v.released.slice(0,4))
       }
       return videogame;
     })
