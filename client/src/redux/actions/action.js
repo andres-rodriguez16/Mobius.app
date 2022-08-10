@@ -10,6 +10,7 @@ export const TYPE_GENRO = "TYPE_GENRO";
 export const ORDEN_BY_ALPHA = "ORDEN_BY_ALPHA";
 export const CLEAR_DETAILS = "CLEAR_DETAILS";
 export const CLEAR_HOME = "CLEAR_HOME";
+export const ORDEN_FECHA = "ORDEN_FECHA"
 
 
 export function getVideoGames() {
@@ -116,5 +117,12 @@ export function clearDetails (){
 export function clearHome (){
   return {
     type: CLEAR_HOME
+  }
+}
+
+export function ordenFecha (orden){
+  return {
+    type : ORDEN_FECHA,
+    payload : orden
   }
 }

@@ -9,7 +9,8 @@ import {
   TYPE_GENRO,
   ORDEN_BY_ALPHA,
   CLEAR_DETAILS,
-  CLEAR_HOME
+  CLEAR_HOME,
+  ORDEN_FECHA
 } from "./actions/action"
 
 const initialState = {
@@ -135,6 +136,19 @@ function reducerVideoGames(state = initialState, action) {
       videoGamesFilter : state.videoGames
     }
   }
+  else if (action.type === ORDEN_FECHA){
+  const ordenFecha = [...state.videoGamesFilter];
+    ordenFecha.sort((a, b) => {
+    if (a.released < b.released) return action.payload === "asc" ? -1 : 1;
+    else if (a.released > b.released)
+      return action.payload === "asc" ? 1 : -1;
+    else return 0;
+    })
+    return{
+      ...state,
+      videoGamesFilter : ordenFecha
+    }
+  }  
   else {
     return {
       ...state
