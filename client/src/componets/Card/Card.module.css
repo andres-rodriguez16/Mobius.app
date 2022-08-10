@@ -14,15 +14,15 @@ body {
 .Card{
   position: relative;
   display: block;
-  height: 100%;  
+  height: 100%; 
   max-width: 450px;
   max-height: 500px;
 }
 .Card:hover{
-  background-color: #FE7F3C;
-  transition: 1 ease;
-  border-radius: 20px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 26px;
 }
+
 .image{
   width: 100%;
   height: 200px;
@@ -41,16 +41,25 @@ body {
 .card__title{
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
-  margin: 0 0 .3em;
+  margin: 20px ;
   color: #303435;
   text-align: center;
 
 }
 .rating{
-  margin-left: 35px;
-  margin-top: -10px;
+  margin-left: 32px;
+  margin-top: 0;
   margin-bottom: 10px;
-  color: yellow;
+  color: #FF521B;
+  font-family: 'Montserrat', sans-serif; 
+  display: flex;
+  flex-direction: column;
+}
+.fecha{
+  color: #FF521B;
+  margin-left: 44px;
+  margin-top: -10px;
+  margin-bottom: 5px;
   font-family: 'Montserrat', sans-serif; 
   display: flex;
   flex-direction: column;

@@ -16,7 +16,7 @@
 }
 .container{
   display: flex;
-  justify-content: center;
+  
   background-size: 25rem;
   margin: 1rem auto;
   flex-direction: column;
@@ -25,16 +25,17 @@
   max-height: 70p;
 }
 .button__submit{
-  display: flex;
-  margin-left: 225px;
-  margin-right: 225px;
-  padding-top: 10px;
-  cursor: pointer;
-  background-color: transparent;
-  border-radius: 5px;
   border: 0;
-  font-size: medium;
-  color: #FE7F3C;
+  margin: 0 ;
+  height: 30px;
+  width: 80px;
+  border-radius: 15px;
+  background-color: #FE7F3C;
+  color: aliceblue;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .input__all input{
   

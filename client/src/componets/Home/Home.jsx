@@ -82,8 +82,8 @@ const Home = () => {
           <option value='z-a'>Z-A</option>
         </select>
         <select onChange={e => handleOnGames(e)}>
-          <option>Orden</option>
-          <option value='DB'>Creados</option>
+          <option>Creando en</option>
+          <option value='DB'>Base de datos</option>
           <option value='Api'>Api</option>
         </select>
         <select name='Genros' onChange={e => handleFiltroPorGenro(e)}>

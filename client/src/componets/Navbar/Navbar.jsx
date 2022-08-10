@@ -14,12 +14,14 @@ const NavBar = () => {
 
   return (
     <header className={s.navBar}>
-      <h1 className={s.header__title}>Möbius</h1>
+      <Link to="/">
+        <h1 className={s.header__title}>Möbius</h1>
+      </Link>
       <nav>
         <ul className={s.list}>
           <li >
-            <Link to='/'>
-              <button>Intro</button>
+            <Link to='/home'>
+              <button>Home</button>
             </Link>
           </li>
           <li>

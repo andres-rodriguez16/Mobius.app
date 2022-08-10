@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Card.module.css';
 
-const Card = ({ name, genres, image, rating }) => {
+const Card = ({ name, genres, image, rating, released }) => {
   return (
     <div className={style.Card}>
       <div >
@@ -15,6 +15,7 @@ const Card = ({ name, genres, image, rating }) => {
           <div className={style.rating}>
           <p>★{rating}</p>
           </div>
+          <p className={style.fecha} >{released}</p>
         </div>
       </div>
     </div>

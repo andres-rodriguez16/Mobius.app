@@ -1,10 +1,25 @@
-.Search{
-  margin-top: 3px;
-}
+
 
 .input__search{
-  padding-top: 5px;
-  padding-left: 5px;
   border: 0;
-  border-radius: 5px;
+  height: 30px;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
 }
+
+.buttom__search {
+  border: 0;
+  margin: 0 5px;
+  height: 30px;
+  width: 80px;
+  border-radius: 15px;
+  background-color: #FE7F3C;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.Search {
+  margin: 0 20px;
+}
+

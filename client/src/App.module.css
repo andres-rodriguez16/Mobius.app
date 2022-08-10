@@ -1,9 +1,4 @@
 
-html, body {
-  height: 100%; 
-  margin: 0;
-}
-
 .background {
   background-color: hsla(0, 100%, 50%, 1);
   background-image: url('./img/gradient_mesh.png');
