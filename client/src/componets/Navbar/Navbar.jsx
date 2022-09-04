@@ -13,23 +13,28 @@ const NavBar = () => {
   }, [dispatch]);
 
   return (
-    <header className={s.navBar}>
-      <Link to="/">
-        <h1 className={s.header__title}>Möbius</h1>
-      </Link>
-      <nav>
-        <ul className={s.list}>
-          <li >
-            <Link to='/home'>
-              <button>Home</button>
-            </Link>
-          </li>
-          <li>
-            <Link to='/createVideogame'>
-              <button>Create</button>
-            </Link>
-          </li>
-        </ul>
+    <header className={s.container}>
+      <nav className={s.navbar}>
+        <Link to='/' className={s.header__title}>
+          Möbius
+        </Link>
+        <section className={s['navbar--section']}>
+          <ul className={s['navbar--section__container']}>
+            <li>
+              <Link>About</Link>
+            </li>
+            <li>
+              <Link to='/home'>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to='/createVideogame'>
+                Create
+              </Link>
+            </li>
+          </ul>
+        </section>
       </nav>
     </header>
   );
