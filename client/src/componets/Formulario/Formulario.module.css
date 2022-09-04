@@ -1,56 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=MuseoModerno:wght@400;700&display=swap');
 
-.button__volver{
+.button__volver {
   color: #FE7F3C;
   border: #FE7F3C;
-  font-family:  'MuseoModerno', cursive;
+  font-family: 'MuseoModerno', cursive;
   font-size: large;
   cursor: pointer;
   background-color: transparent;
   padding: 10px 50px;
   margin-top: 5px;
 }
-.h1__create{
+
+.h1__create {
   color: #FE7F3C;
-  text-align:center;
+  text-align: center;
 }
-.container{
+
+.container {
   display: flex;
-  
+
   background-size: 25rem;
   margin: 1rem auto;
   flex-direction: column;
   max-width: 600px;
-  padding: 15px ;
+  padding: 15px;
   max-height: 70p;
 }
-.button__submit{
-  border: 0;
-  margin: 0 ;
-  height: 30px;
-  width: 80px;
-  border-radius: 15px;
-  background-color: #FE7F3C;
-  color: aliceblue;
+
+.button__submit {
+
+  background: #fff; /* color de fondo */
+  color:  #FE7F3C; /* color de fuente */
+  border: 2px solid  #FE7F3C; /* tamaño y color de borde */
+  border-radius: 50px;
+  padding: 16px 40px;
+  border-radius: 3px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin-left: 40%;
   cursor: pointer;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
-.input__all input{
-  
+
+.button__submit:hover{
+  color: #fff; /* color de fuente hover */
+}
+.button__submit::after {
+  content: "";
+  background:  #FE7F3C; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.button__submit:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.input__all input {
+
   padding: 15px;
   border-radius: 5px;
   text-align: center;
   font-size: medium;
   width: 80%;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 
 }
+
 .input__all {
   background-color: rgb(248, 248, 242);
   margin: 1rem auto;
-  padding: 15px ;
+  padding: 15px;
   text-align: center;
   border-radius: 20px;
   background-size: 25rem;
@@ -59,26 +90,31 @@
   display: flex;
   flex-direction: column;
 }
-.input{ 
+
+.input {
   padding-top: 1.5rem;
   padding-bottom: 1rem;
 }
-.input input:hover{
+
+.input input:hover {
   background-color: aliceblue;
 }
-.select{
+
+.select {
   background-color: rgb(248, 248, 242);
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.select select{
+
+.select select {
   font-size: medium;
   padding: 15px;
   margin-left: 20px;
   text-align: center;
- 
+
 }
+
 .input__all p {
- color: red;
+  color: red;
 }

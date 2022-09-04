@@ -13,9 +13,7 @@ async function añadirALaDb() {
   } catch (error) {
     return error;
   }
-  
 }
-
 module.exports = {
  añadirALaDb
 
