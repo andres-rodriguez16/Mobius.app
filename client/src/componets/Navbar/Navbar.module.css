@@ -3,22 +3,16 @@
 .header__title {
   color: #FE7F3C;
   font-family: 'MuseoModerno', cursive;
-  font-weight: 400;
-  padding-left: 50px;
-  margin-top: 35px;
-  cursor: pointer;
+  font-size: xx-large;
+
 }
 
-.navBar {
-  display: flex;
+.container {
+  margin: 3% 6%;
 }
 
-.list {
-  list-style: none;
-  display: flex;
-}
 
-.list a {
+li a {
   cursor: default;
   text-decoration: none;
   background-image: linear-gradient(currentColor, currentColor);
@@ -28,26 +22,37 @@
   transition: background-size .3s;
 }
 
-.list button {
-  color: #FE7F3C;
-  border-radius: 10px;
-  border: none;
-  font-family: 'MuseoModerno', cursive;
-  background-color: transparent;
-  margin-top: 43px;
-  font-size: 20px;
-  font-weight: 100;
-  margin-left: 370px;
-  cursor: pointer;
-}
 
 a:hover,
 a:focus {
   background-size: 100% 2px;
   color: #FE7F3C;
 }
+.navbar--section__container {
+  display: flex;
+  justify-content: space-around;
+}
+ 
+.NavBar {
+  color:#303435;
+  font-size: medium;
+  padding: 10px 10px;
+}
 
-@media (max-width: 600px) {
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar--section {
+  width: -webkit-fill-available;
+  max-width: 40%;
+  padding-right: 50px;
+  margin-right: 25%;
+  margin-top: 20px;
+}
+
+/* @media (max-width: 600px) {
   .navBar {
     background-color: aqua;
     display: flex;
@@ -78,4 +83,4 @@ a:focus {
     padding-left: 20px;
     margin-top: 35px;
   }
-}
+} */
