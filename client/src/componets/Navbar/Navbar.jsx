@@ -20,7 +20,7 @@ const NavBar = () => {
         </Link>
         <section className={s['navbar--section']}>
           <ul className={s['navbar--section__container']}>
-            <li>
+            <li >
               <Link>About</Link>
             </li>
             <li>
