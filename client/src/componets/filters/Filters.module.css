@@ -1,0 +1,9 @@
+.filter select{
+  padding: 5px;
+  border-radius: 10px;
+  margin: 0 4px;
+  background-color:  white;
+  border: 0;
+  color:  #FE7F3C;
+  cursor: pointer;
+}
