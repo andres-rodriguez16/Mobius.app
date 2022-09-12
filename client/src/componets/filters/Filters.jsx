@@ -63,7 +63,7 @@ export default function Filters({setActualPage}) {
       <option value='DB'>Datebase</option>
       <option value='Api'>Api</option>
     </select>
-    <select onChange={e => handleFiltroPorGenro(e)}>
+    <select onChange={e => handleFiltroPorGenro(e)} className={style.genres}>
       <option value='All'>Genres</option>
       {genres.length
         ? genres.map(g => {
