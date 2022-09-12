@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { postVideoGame, getGenres } from '../../redux/actions/action';
 import platforms from './Plataformas';
@@ -27,7 +26,6 @@ function validation(input) {
   if (input.platforms.length === 0) {
     errores.platforms = 'Este campo no puede estar vacio';
   }
-  console.log(errores);
   return errores;
 }
 
@@ -148,9 +146,6 @@ const Formulario = () => {
 
   return (
     <div>
-      <Link to='/home'>
-        <button className={s.button__volver}>Volver</button>
-      </Link>
       <h2 className={s.h1__create}>Crea tu Videojuego!</h2>
       <div className={s.container}>
         <form onSubmit={e => handlerSubmit(e)}>

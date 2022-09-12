@@ -12,32 +12,29 @@
 }
 
 
-li a {
-  cursor: default;
+.navbar--section__container a {
+  cursor: pointer;
   text-decoration: none;
   background-image: linear-gradient(currentColor, currentColor);
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 0% 2px;
   transition: background-size .3s;
+  color: #303435;
 }
 
 
-a:hover,
-a:focus {
+.navbar--section__container a:hover,
+.navbar--section__container a:focus {
   background-size: 100% 2px;
   color: #FE7F3C;
 }
+
 .navbar--section__container {
   display: flex;
   justify-content: space-around;
 }
- 
-.NavBar {
-  color:#303435;
-  font-size: medium;
-  padding: 10px 10px;
-}
+
 
 .navbar {
   display: flex;
@@ -52,35 +49,58 @@ a:focus {
   margin-top: 20px;
 }
 
-/* @media (max-width: 600px) {
-  .navBar {
-    background-color: aqua;
-    display: flex;
-  }
-
-  .list {
-    list-style: none;
-    display: flex;
-  }
-
-  .list button {
-    color: #FE7F3C;
-    border-radius: 10px;
-    border: none;
-    font-family: 'MuseoModerno', cursive;
-    background-color: transparent;
-    margin-top: 43px;
-    font-size: 20px;
-    font-weight: 100;
-    margin-left: 10px;
-    cursor: pointer;
-  }
+@media (max-width: 600px) {
 
   .header__title {
     color: #FE7F3C;
     font-family: 'MuseoModerno', cursive;
-    font-weight: 400;
-    padding-left: 20px;
-    margin-top: 35px;
+    font-size: larger;
+    margin-top: 12px;
   }
-} */
+
+  .container {
+    margin: 3% 6%;
+  }
+
+
+  .navbar--section__container a {
+    cursor: pointer;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+    color: #303435;
+  }
+
+
+  .navbar--section__container a:hover,
+  .navbar--section__container a:focus {
+    background-size: 100% 2px;
+    color: #FE7F3C;
+  }
+
+  .navbar--section__container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navbar--section {
+    width: -webkit-fill-available;
+    max-width: 40%;
+    padding-right: 50px;
+    margin-right: 10%;
+    margin-top: 20px;
+  }
+  .navbar--section li {
+   margin-right: 10px;
+   margin-left: 10px;
+  }
+}
