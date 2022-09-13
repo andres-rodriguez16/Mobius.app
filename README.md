@@ -35,7 +35,7 @@ Recuerda estar posicionado sobre la carpeta del proyecto, en este caso debe term
 - Hacer `npm start`. en `api` y `client`. En estas carpetas estará el código del back-end y el front-end respectivamente.
   Esto nos llevará al navegador donde podremos ver la aplicación.
 
-## HomePage
+## Landing page
 
 Así luce la página de inicio.
 
@@ -44,7 +44,12 @@ Así luce la página de inicio.
 Para poder entrar al proyecto tenemos dos opciones, la primera es usarlo desde el deploy y la segunda es usarlo de manera local en tu compu.
 **Nota:** para una mejor experiencia recomiendo verlo desde un computador ya que no es responsive.
 
+## Home
 
+![Port](https://raw.githubusercontent.com/andresyrg16/Mobius.app/front/details/client/public/img/home.png)
 
-
-
+Área donde se verá el listado de videojuegos:
+- card con Imagen, Nombre, Géneros, Fecha
+- Barra para Buscar videjuegos
+- Filtros diferentes tipos de orden como fecha, ranting, etc.
+- Paginado numerico
