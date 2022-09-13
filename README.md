@@ -39,7 +39,7 @@ Recuerda estar posicionado sobre la carpeta del proyecto, en este caso debe term
 
 Así luce la página de inicio.
 
-![client](./public/img/homepage.png)
+![Port](https://raw.githubusercontent.com/andresyrg16/Mobius.app/front/details/client/public/img/landingPAge.png)
 
 Para poder entrar al proyecto tenemos dos opciones, la primera es usarlo desde el deploy y la segunda es usarlo de manera local en tu compu.
 **Nota:** para una mejor experiencia recomiendo verlo desde un computador ya que no es responsive.
