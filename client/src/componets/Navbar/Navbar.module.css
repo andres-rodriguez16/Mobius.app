@@ -23,7 +23,10 @@
   color: #303435;
 }
 
-
+.container__info p{
+  margin-left: 20px;
+  background-color: aqua;
+}
 .navbar--section__container a:hover,
 .navbar--section__container a:focus {
   background-size: 100% 2px;

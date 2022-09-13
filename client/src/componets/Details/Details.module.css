@@ -1,66 +1,143 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=MuseoModerno:wght@400;700&display=swap');
 
-
-.name{
-  font-family: 'Montserrat', sans-serif;
-  text-align:center;
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
 }
-.img{
+
+.name {
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 10%;
+}
+
+.img {
   height: 300px;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 400px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 5%;
+  margin: 15px 0 15px  80px;
+
+}
+
+.container__info {
+  display: grid;
   
 }
-.description__p{
- font-family: 'Montserrat', sans-serif;
- padding-left: 40px;
- padding-right: 40px;
- padding-top: 5px;
- text-align: center;
+
+.fecha{
+  margin-left: 20px;
+  margin-right: 20px;
 }
-.description__text{
+.description__p {
   font-family: 'Montserrat', sans-serif;
-  padding-left: 40px;
+  /* padding-left: 40px;
   padding-right: 40px;
-  padding-top: 10px;
+  padding-top: 5px;
+  text-align: center; */
+  
 }
 
-.rating{
+.description__text {
   font-family: 'Montserrat', sans-serif;
-  padding-top: 20px;
-  text-align:center;
+  /* padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px; */
+  margin-right: 100px;
+  text-align: justify;
 }
-.lanzamiento{
+
+.rating {
   font-family: 'Montserrat', sans-serif;
-  padding-top: 20px;
-  text-align:center;
+  /* padding-top: 20px;
+  text-align: center; */
 }
+.lanzamiento {
+  font-family: 'Montserrat', sans-serif;
+  /* padding-top: 20px;
+  text-align: center; */
+  margin-top: 2px;
+ 
+}
+
 .genres {
   font-family: 'Montserrat', sans-serif;
-  padding-top: 20px;
-  text-align:center;
-  
+  /* padding-top: 20px;
+  text-align: center; */
+
 }
-select, ul{
+
+select,
+ul {
   list-style: none
 }
 
-.platforms{
+.platforms {
   font-family: 'Montserrat', sans-serif;
-  padding-top: 20px;
-  text-align:center;
-  padding-bottom: 20px;
+  /* padding-top: 20px;
+  text-align: center;
+  padding-bottom: 20px; */
 }
-.button__volver{
-  color: #FE7F3C;
-  border: #FE7F3C;
-  font-family:  'MuseoModerno', cursive;
-  font-size: large;
-  cursor: pointer;
-  background-color: transparent;
-  padding: 20px 50px;
-  margin-top: 5px;
+
+@media (max-width: 600px) {
+  .name {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+  }
+  
+  .img {
+    height: 300px;
+    border-radius: 10px;
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+  }
+  
+  .description__p {
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 5px;
+    text-align: center;
+  }
+  
+  .description__text {
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+  }
+  
+  .rating {
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 20px;
+    text-align: center;
+  }
+  
+  .lanzamiento {
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 20px;
+    text-align: center;
+  }
+  
+  .genres {
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 20px;
+    text-align: center;
+  
+  }
+  
+  select,
+  ul {
+    list-style: none
+  }
+  
+  .platforms {
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
 }
