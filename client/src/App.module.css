@@ -15,4 +15,25 @@
   border-radius: 52px;
   height: 85%;
   width: 90%;
+  margin: 30px 30px;
+}
+@media (max-width: 600px) {
+  .background {
+    background-color: hsla(0, 100%, 50%, 1);
+    background-image: url('./img/gradient_mesh.png');
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+  }
+  
+  .transparency {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(30px);
+    border-radius: 52px;
+    height: 85%;
+    width: 80%;
+    margin: 50px 50px;
+  }
 }
