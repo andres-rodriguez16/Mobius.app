@@ -14,6 +14,8 @@ async function fecthAPIGames(url, count) {
 
 function datosTraidosDeLaApi(datos) {
   try {
+    // datos.genres.replace("Action", "hola")
+  
     let results = datos.map(v => {
       let videogame = {
         id: v.id,
