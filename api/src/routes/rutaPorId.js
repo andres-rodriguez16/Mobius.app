@@ -18,7 +18,6 @@ router.get("/:idVi", async (req, res) => {
       const busquefaDB = await Videogame.findByPk(idVi,{
         include : Genero
       })
-      // console.log(busquefaDB.dataValues.Generos.map(el => el.name));
       const videoGame = {
         name : busquefaDB.dataValues.name,
         description : busquefaDB.dataValues.description,
@@ -28,24 +27,24 @@ router.get("/:idVi", async (req, res) => {
         Generos : busquefaDB.dataValues.Generos.map(el => el.name),
         platforms : busquefaDB.dataValues.platforms
       }
-      let a = ""
-    videoGame.Generos.forEach((el, i) => {
+      let strFinal = ""
+    videoGame.Generos.forEach((genre, i) => {
       if (i === videoGame.Generos.length - 1) {
-        a = a + " " + el
+        strFinal = strFinal + " " + genre
         return;
       }
-      a = a + ` ${el} -`
+      strFinal = strFinal + ` ${genre} -`
     });
-    let platform = ""
-    videoGame.platforms.forEach((el, i) => {
+    let platformFinal = ""
+    videoGame.platforms.forEach((platform, i) => {
       if (i === videoGame.platforms.length - 1) {
-        platform = platform + " " + el
+        platformFinal = platformFinal + " " + platform
         return;
       }
-      platform = platform + `  ${el} -`
+      platform = platform + `  ${platform} -`
     });
-    videoGame.platforms = platform
-    videoGame.Generos = a
+    videoGame.platforms = platformFinal
+    videoGame.Generos = strFinal
       res.send(videoGame)
     }
   } catch (error) {
