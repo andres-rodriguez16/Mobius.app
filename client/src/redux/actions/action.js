@@ -5,7 +5,7 @@ export const GET_VIDEOGAMES_POR_ID = "GET_VIDEOGAMES_POR_ID";
 export const GET_VIDEOGAME_POR_SEARCH = "GET_VIDEOGAME_POR_SEARCH";
 export const GET_GENRES = "GET_GENRES";
 export const RATING_SORT = "RATING_SORT";
-export const GAMES_SORT= "GAMES_SORT";
+export const GAMES_SORT = "GAMES_SORT";
 export const TYPE_GENRO = "TYPE_GENRO";
 export const ORDEN_BY_ALPHA = "ORDEN_BY_ALPHA";
 export const CLEAR_DETAILS = "CLEAR_DETAILS";
@@ -46,16 +46,16 @@ export function getVideoGamePorSearch(name) {
     fetch(`http://localhost:3001/videogames?name=${name}`)
       .then(response => response.json())
       .then(response => {
-       if (!response.error) {
-        dispatch({
-          type: GET_VIDEOGAME_POR_SEARCH,
-          payload: response,
-        })
-       }else{
-         return alert("no se encotraron resultados")
-       } 
+        if (!response.error) {
+          dispatch({
+            type: GET_VIDEOGAME_POR_SEARCH,
+            payload: response,
+          })
+        } else {
+          return alert("no se encotraron resultados")
+        }
       })
-      .catch( e => console.log(e))
+      .catch(e => console.log(e))
   }
 }
 
@@ -73,56 +73,56 @@ export function getGenres() {
   }
 }
 
-export function postVideoGame(payload){ 
-  return async function(){
+export function postVideoGame(payload) {
+  return async function () {
     const response = await axios.post(`http://localhost:3001/videogames/`, payload)
     return response;
   }
-} 
+}
 
-export function ratingSort(orden){
+export function ratingSort(orden) {
 
   return {
-    type : RATING_SORT,
-    payload : orden,
+    type: RATING_SORT,
+    payload: orden,
   }
 }
 // filtro desde la base de datos y api
-export function ordenPorGames (orden){
+export function ordenPorGames(orden) {
   return {
-    type : GAMES_SORT,
-    payload : orden,
+    type: GAMES_SORT,
+    payload: orden,
   }
 }
 
-export function filtroPorGenero (genero){
+export function filtroPorGenero(genero) {
   return {
-    type : TYPE_GENRO,
-    payload : genero
+    type: TYPE_GENRO,
+    payload: genero
   }
 }
 
-export function filtroPorAlpha(orden){
+export function filtroPorAlpha(orden) {
   return {
-     type : ORDEN_BY_ALPHA,
-     payload : orden
+    type: ORDEN_BY_ALPHA,
+    payload: orden
   }
 }
 
-export function clearDetails (){
-   return {
-     type: CLEAR_DETAILS
-   }
+export function clearDetails() {
+  return {
+    type: CLEAR_DETAILS
+  }
 }
-export function clearHome (){
+export function clearHome() {
   return {
     type: CLEAR_HOME
   }
 }
 
-export function ordenFecha (orden){
+export function ordenFecha(orden) {
   return {
-    type : ORDEN_FECHA,
-    payload : orden
+    type: ORDEN_FECHA,
+    payload: orden
   }
 }

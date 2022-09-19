@@ -7,11 +7,9 @@ import s from './Navbar.module.css';
 
 const NavBar = () => {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getVideoGames());
-  }, [dispatch]);
-
+  },[dispatch]);
   return (
     <header className={s.container}>
       <nav className={s.navbar}>
@@ -39,5 +37,4 @@ const NavBar = () => {
     </header>
   );
 };
-
 export default NavBar;

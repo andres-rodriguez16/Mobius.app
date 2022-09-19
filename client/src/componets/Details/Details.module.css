@@ -1,63 +1,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=MuseoModerno:wght@400;700&display=swap');
 
 
-.name{
+.name {
   font-family: 'Montserrat', sans-serif;
-  text-align:center;
+  text-align: center;
 }
-.img{
+
+.img {
   height: 300px;
   border-radius: 20px;
   width: 400px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  
+
 }
-.description__p{
- font-family: 'Montserrat', sans-serif;
- padding-left: 40px;
- padding-right: 40px;
- padding-top: 5px;
- text-align: center;
+
+.description__p {
+  font-family: 'Montserrat', sans-serif;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+  text-align: center;
 }
-.description__text{
+
+.description__text {
   font-family: 'Montserrat', sans-serif;
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 10px;
 }
 
-.rating{
+.rating {
   font-family: 'Montserrat', sans-serif;
   padding-top: 20px;
-  text-align:center;
+  text-align: center;
 }
-.lanzamiento{
+
+.lanzamiento {
   font-family: 'Montserrat', sans-serif;
   padding-top: 20px;
-  text-align:center;
+  text-align: center;
 }
+
 .genres {
   font-family: 'Montserrat', sans-serif;
   padding-top: 20px;
-  text-align:center;
-  
+  text-align: center;
 }
-select, ul{
+
+select,
+ul {
   list-style: none
 }
 
-.platforms{
+.platforms {
   font-family: 'Montserrat', sans-serif;
   padding-top: 20px;
-  text-align:center;
+  text-align: center;
   padding-bottom: 20px;
 }
-.button__volver{
+
+.button__volver {
   color: #FE7F3C;
   border: #FE7F3C;
-  font-family:  'MuseoModerno', cursive;
+  font-family: 'MuseoModerno', cursive;
   font-size: large;
   cursor: pointer;
   background-color: transparent;

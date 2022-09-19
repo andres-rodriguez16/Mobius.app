@@ -18,7 +18,6 @@
 
 .container {
   display: flex;
-
   background-size: 25rem;
   margin: 1rem auto;
   flex-direction: column;
@@ -28,7 +27,6 @@
 }
 
 .button__submit {
-
   background: #fff; /* color de fondo */
   color:  #FE7F3C; /* color de fuente */
   border: 2px solid  #FE7F3C; /* tamaño y color de borde */
@@ -68,14 +66,12 @@
   transition: all 0.35s;
 }
 .input__all input {
-
   padding: 15px;
   border-radius: 5px;
   text-align: center;
   font-size: medium;
   width: 80%;
   box-sizing: border-box;
-
 }
 
 .input__all {
@@ -112,7 +108,6 @@
   padding: 15px;
   margin-left: 20px;
   text-align: center;
-
 }
 
 .input__all p {
