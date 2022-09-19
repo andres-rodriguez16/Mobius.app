@@ -165,6 +165,7 @@ const Formulario = () => {
             <div className={s.input}>
               <h4>Descripción</h4>
               <textarea
+                className={s.textarea}
                 type='text'
                 value={input.description}
                 name='description'
@@ -200,9 +201,9 @@ const Formulario = () => {
             {errors.rating && <p>{errors.rating}</p>}
             <div className={s.select}>
               <div>
-                <h3>Generos :</h3>
-                <select name='Genros' onChange={e => handlerCkeckGenros(e)}>
-                  <option value='generos'>Selección</option>
+                <h3> Generos :</h3>
+                <select className={s.select__Pla__ge} name='Genros' onChange={e => handlerCkeckGenros(e)}>
+                  <option value='generos'>Select</option>
                   {generos.map(g => {
                     return (
                       <option value={g.name} key={g.id}>
@@ -213,25 +214,25 @@ const Formulario = () => {
                 </select>
                 {input.genres.map((el, index) => (
                   <div className='divTem' key={index + 1}>
-                    <span>{el}</span>
                     <button
-                      className='botonX'
+                      className={s.put__off}
                       type='button'
                       onClick={() => handleDeleteGeneros(el)}
                     >
-                      X
+                      <span>{el}</span>
                     </button>
                   </div>
                 ))}
               </div>
               {errors.genres ? <p>{errors.genres}</p> : null}
               <div className={s.select}>
-                <h3>Plataformas :</h3>
+                <h3> Plataformas :</h3>
                 <select
+                className={s.select__Pla__ge} 
                   name='Platafromas'
                   onChange={e => handlerCkeckPlataformas(e)}
                 >
-                  <option value='plataformas'>Selección</option>
+                  <option value='plataformas'>Select</option>
                   {platforms.map((g, index) => {
                     return (
                       <option value={g} key={index + 1}>
@@ -242,13 +243,12 @@ const Formulario = () => {
                 </select>
                 {input.platforms.map((el, index) => (
                   <div className='divTem' key={index + 1}>
-                    <span>{el}</span>
                     <button
-                      className='botonX'
+                      className={s.put__off}
                       type='button'
                       onClick={() => handleDeletePlatoformas(el)}
                     >
-                      X
+                      <span>{el}</span>
                     </button>
                   </div>
                 ))}
