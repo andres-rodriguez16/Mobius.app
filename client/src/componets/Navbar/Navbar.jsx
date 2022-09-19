@@ -20,18 +20,14 @@ const NavBar = () => {
         </Link>
         <section className={s['navbar--section']}>
           <ul className={s['navbar--section__container']}>
-            <li >
+            <li>
               <Link>About</Link>
             </li>
             <li>
-              <Link to='/home'>
-                Home
-              </Link>
+              <Link to='/home'>Home</Link>
             </li>
             <li>
-              <Link to='/createVideogame'>
-                Create
-              </Link>
+              <Link to='/createVideogame'>Create</Link>
             </li>
           </ul>
         </section>

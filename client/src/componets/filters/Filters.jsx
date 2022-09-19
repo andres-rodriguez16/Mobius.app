@@ -12,19 +12,16 @@ import {
 
 export default function Filters({setActualPage}) {
 
-
   const dispatch = useDispatch();
   const genres = useSelector(state => state.genres);
   function handleOnGames(e) {
     dispatch(ordenPorGames(e.target.value));
     setActualPage(1)
   }
-
   function handleFiltroPorGenro(e) {
     dispatch(filtroPorGenero(e.target.value));
     setActualPage(1);
   }
-
   function handleFiltroPorRating(e) {
     dispatch(ratingSort(e.target.value));
     setActualPage(1)
@@ -39,7 +36,6 @@ export default function Filters({setActualPage}) {
   useEffect(() => {
     dispatch(getGenres());
   }, [dispatch]);
-
 
   return (
     <div className={style.filter}>

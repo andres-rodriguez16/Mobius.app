@@ -28,7 +28,6 @@
 
 .container__info {
   display: grid;
-
 }
 
 .fecha .info {
@@ -55,15 +54,11 @@
 .lanzamiento {
   font-family: 'Montserrat', sans-serif;
   margin-top: 2px;
-
 }
 
 .genres {
   font-family: 'Montserrat', sans-serif;
-
 }
-
-
 
 select,
 ul {
@@ -97,9 +92,6 @@ ul {
 
 
   .fecha .info {
-    /* margin-left: 10%; */
-    /* margin: 10px 0 15px 60px; */
-    /* margin: 20px; */
     text-align: center;
     margin-right: 20px;
     margin-left: 20px;
@@ -110,7 +102,6 @@ ul {
   }
 
   .description__text {
-    /* margin-top: 400px; */
     display: none;
   }
 
@@ -122,12 +113,10 @@ ul {
   .lanzamiento {
     font-family: 'Montserrat', sans-serif;
     margin-top: 2px;
-
   }
 
   .genres {
     font-family: 'Montserrat', sans-serif;
-
   }
 
   select,
