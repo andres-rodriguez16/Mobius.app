@@ -88,7 +88,7 @@ router.delete("/:id", async (req, res, next) => {
     })
     res.send("Videojuego eliminado correctamente")
   } catch (error) {
-    next(error)
+    throw error
   }
 });
 
@@ -107,6 +107,7 @@ router.put("/:id", async (req, res, next) => {
       })
     res.send("videogames actualizado")
   } catch (error) {
+    throw error
   }
 })
 module.exports = router;

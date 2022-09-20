@@ -24,7 +24,6 @@ export function getVideoGames() {
     } catch (error) {
       throw error
     }
-
   };
 };
 
@@ -71,7 +70,6 @@ export function getGenres() {
     } catch (error) {
       throw error
     }
-    
   }
 }
 
