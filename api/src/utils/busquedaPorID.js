@@ -16,27 +16,28 @@ async function getGameId(idVi) {
       platforms: searchPorId.data.platforms?.map(p => p.platform.name)
     };
     let genres = ""
-    game.Generos.forEach((el, i) => {
+    game.Generos.forEach((genre, i) => {
       if (i === game.Generos.length - 1) {
-        genres = genres + " " + el
+        genres = genres + " " + genre
         return;
       }
-      genres = genres + ` ${el} -`
+      genres = genres + ` ${genre} -`
     });
     game.Generos = genres
 
-    let platform = ""
-    game.platforms.forEach((el, i) => {
+    let platforms = ""
+    game.platforms.forEach((platform, i) => {
       if (i === game.platforms.length - 1) {
-        platform = platform + " " + el
+        platforms = platforms + " " + platform
         return;
       }
-      platform = platform + `  ${el} -`
+      platforms = platforms + `  ${platform} -`
     });
-    game.platforms = platform
+    game.platforms = platforms
     return game;
   } catch (error) {
     return error;
   }
 }
 module.exports = { getGameId };
+

@@ -37,7 +37,7 @@ export function getVideoGamePorId(id) {
           payload: response.data
         })
       } catch (error) {
-        console.log(error); 
+        return error; 
       }
   }
 }
@@ -55,7 +55,7 @@ export function getVideoGamePorSearch(name) {
           return alert("no se encotraron resultados")
         }
     } catch (error) {
-      console.log(error); 
+      return error; 
     }
   }
 }
@@ -69,7 +69,7 @@ export function getGenres() {
           payload: response.data,
         })
     } catch (error) {
-      console.log(error)
+      return error
     }
     
   }
@@ -89,7 +89,6 @@ export function ratingSort(orden) {
     payload: orden,
   }
 }
-// filtro desde la base de datos y api
 export function ordenPorGames(orden) {
   return {
     type: GAMES_SORT,
@@ -128,3 +127,4 @@ export function ordenFecha(orden) {
     payload: orden
   }
 };
+
