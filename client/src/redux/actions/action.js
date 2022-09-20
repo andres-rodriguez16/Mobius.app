@@ -22,7 +22,7 @@ export function getVideoGames() {
         payload: response.data
       });
     } catch (error) {
-      console.log(error);
+      throw error
     }
 
   };
@@ -37,7 +37,7 @@ export function getVideoGamePorId(id) {
           payload: response.data
         })
       } catch (error) {
-        return error; 
+        throw error; 
       }
   }
 }
@@ -55,7 +55,7 @@ export function getVideoGamePorSearch(name) {
           return alert("no se encotraron resultados")
         }
     } catch (error) {
-      return error; 
+      throw error; 
     }
   }
 }
@@ -69,7 +69,7 @@ export function getGenres() {
           payload: response.data,
         })
     } catch (error) {
-      return error
+      throw error
     }
     
   }
