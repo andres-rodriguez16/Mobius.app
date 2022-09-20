@@ -34,12 +34,9 @@ async function getGameId(idVi) {
       platform = platform + `  ${el} -`
     });
     game.platforms = platform
-  
-    
     return game;
   } catch (error) {
     return error;
   }
-
 }
 module.exports = { getGameId };

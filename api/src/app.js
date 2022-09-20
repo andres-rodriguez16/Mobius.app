@@ -9,7 +9,6 @@ require('./db.js');
 const server = express();
 
 server.name = 'API';
-// 'http://localhost:3000'
 
 server.use(express.json());
 server.use(cookieParser());
