@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import Paginado from '../Paginado/Paginado';
 import Search from '../Search/Search';
 import style from './Home.module.css';
-import loading from "../../img/loading-icon.gif"
+import loading from '../../img/loading-icon.gif';
 import Filters from '../filters/Filters';
 const Home = () => {
   const dispatch = useDispatch();
@@ -19,8 +19,12 @@ const Home = () => {
   const [actualPage, setActualPage] = useState(1);
   const [videogamesPorPagina, setvideogamesPorPagina] = useState(15);
   const indeceDelUltimoVideogame = actualPage * videogamesPorPagina;
-  const indeceDelPrimerVideogame = indeceDelUltimoVideogame - videogamesPorPagina;
-  const actualesVideogames = videoGames?.slice(indeceDelPrimerVideogame,indeceDelUltimoVideogame);
+  const indeceDelPrimerVideogame =
+    indeceDelUltimoVideogame - videogamesPorPagina;
+  const actualesVideogames = videoGames?.slice(
+    indeceDelPrimerVideogame,
+    indeceDelUltimoVideogame
+  );
 
   const paginado = numeroDePaginada => {
     setActualPage(numeroDePaginada);
@@ -29,17 +33,16 @@ const Home = () => {
   useEffect(() => {
     dispatch(getVideoGames());
     dispatch(getGenres());
-    return function (){
-       dispatch(clearHome())
-    }
+    return function () {
+      dispatch(clearHome());
+    };
   }, [dispatch]);
-
 
   return (
     <div className={style.home}>
       <div className={style.barras}>
-      <Search setActualPage={setActualPage} />
-      <Filters setActualPage={setActualPage} />
+        <Search setActualPage={setActualPage} />
+        <Filters setActualPage={setActualPage} />
       </div>
       <Paginado
         videgames={videoGames.length}
@@ -53,8 +56,8 @@ const Home = () => {
               <Link to={'/home/' + v.id} key={v.id}>
                 <Card
                   name={v.name}
-                  genres={v.Generos }
-                  image={v.img }
+                  genres={v.Generos}
+                  image={v.img}
                   key={v.id}
                   rating={v.rating}
                   released={v.released}
@@ -65,10 +68,9 @@ const Home = () => {
         </div>
       ) : (
         <div className={style.loading}>
-          <img src={loading} alt=''  />
+          <img src={loading} alt='' />
         </div>
       )}
-      
     </div>
   );
 };

@@ -4,7 +4,6 @@
   color: #FE7F3C;
   font-family: 'MuseoModerno', cursive;
   font-size: xx-large;
-
 }
 
 .container {
@@ -23,10 +22,11 @@
   color: #303435;
 }
 
-.container__info p{
+.container__info p {
   margin-left: 20px;
   background-color: aqua;
 }
+
 .navbar--section__container a:hover,
 .navbar--section__container a:focus {
   background-size: 100% 2px;
@@ -53,7 +53,6 @@
 }
 
 @media (max-width: 600px) {
-
   .header__title {
     color: #FE7F3C;
     font-family: 'MuseoModerno', cursive;
@@ -64,7 +63,6 @@
   .container {
     margin: 3% 6%;
   }
-
 
   .navbar--section__container a {
     cursor: pointer;
@@ -89,7 +87,6 @@
     justify-content: space-around;
   }
 
-  
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -102,8 +99,9 @@
     margin-right: 10%;
     margin-top: 20px;
   }
+
   .navbar--section li {
-   margin-right: 10px;
-   margin-left: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
   }
-}
+};

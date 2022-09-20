@@ -127,4 +127,4 @@ export function ordenFecha(orden) {
     type: ORDEN_FECHA,
     payload: orden
   }
-}
+};
