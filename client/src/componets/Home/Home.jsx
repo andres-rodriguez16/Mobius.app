@@ -30,6 +30,13 @@ const Home = () => {
     setActualPage(numeroDePaginada);
   };
 
+  const nextPag = function () {
+    setActualPage(actualPage + 1)
+    console.log(actualesVideogames);
+}
+const previusPag = function () {
+    setActualPage(actualPage - 1)
+}
   useEffect(() => {
     dispatch(getVideoGames());
     dispatch(getGenres());
@@ -48,6 +55,10 @@ const Home = () => {
         videgames={videoGames.length}
         videogamesPorPagina={videogamesPorPagina}
         paginado={paginado}
+        previusPag={previusPag}
+        nextPag={nextPag}
+        actualPage={actualPage}
+        actualesVideogames={actualesVideogames}
       />
       {actualesVideogames.length ? (
         <div className={style.list__cards}>

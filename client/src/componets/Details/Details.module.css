@@ -51,7 +51,7 @@
   color: #FE7F3C;
 }
 
-.lanzamiento {
+.released {
   font-family: 'Montserrat', sans-serif;
   margin-top: 2px;
 }
@@ -111,7 +111,7 @@ ul {
     color: #FE7F3C;
   }
 
-  .lanzamiento {
+  .released {
     font-family: 'Montserrat', sans-serif;
     margin-top: 2px;
   }

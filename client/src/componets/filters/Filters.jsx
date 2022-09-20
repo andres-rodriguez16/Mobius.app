@@ -18,18 +18,22 @@ export default function Filters({setActualPage}) {
     dispatch(ordenPorGames(e.target.value));
     setActualPage(1)
   }
+
   function handleFiltroPorGenro(e) {
     dispatch(filtroPorGenero(e.target.value));
     setActualPage(1);
   }
+
   function handleFiltroPorRating(e) {
     dispatch(ratingSort(e.target.value));
     setActualPage(1)
   }
+
   function handleFiltroPorAlpha(e) {
     dispatch(filtroPorAlpha(e.target.value));
     setActualPage(1)
   }
+  
   function handlerFiltroPorFecha(e) {
     dispatch(ordenFecha(e.target.value))
   }

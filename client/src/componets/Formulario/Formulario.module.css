@@ -8,7 +8,6 @@
 
 .container {
   display: flex;
-
   background-size: 25rem;
   margin: 1rem auto;
   flex-direction: column;
@@ -157,7 +156,6 @@ input::placeholder {
   color: red;
   font-family: 'Montserrat', sans-serif
 }
-
 .select__Pla__ge {
   width: 170px;
   height: 50px;

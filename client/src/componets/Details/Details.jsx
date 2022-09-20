@@ -33,7 +33,7 @@ const Details = () => {
           <img className={s.img} src={detailsVideoGames.img} alt='' />
           <div className={s.info}>
           <p className={s.rating}> Ranting ★ {detailsVideoGames.rating}</p>
-            <p className={s.lanzamiento}>
+            <p className={s.released}>
             Release date: {detailsVideoGames.released}
             </p>
             <section className={s.genres}>
