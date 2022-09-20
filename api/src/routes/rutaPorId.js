@@ -48,7 +48,6 @@ router.get("/:idVi", async (req, res) => {
       res.send(videoGame)
     }
   } catch (error) {
-    console.log(error)
     res.status(404).json("videojuego no encotrado")
   }
 })
