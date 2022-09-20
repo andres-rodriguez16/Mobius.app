@@ -18,12 +18,13 @@
 }
 
 .img {
+  object-fit: cover;
   height: 300px;
   border-radius: 10px;
-  width: 400px;
+  width: 500px;
   margin-left: 5%;
   margin: 10px 0 15px 60px;
-
+  
 }
 
 .container__info {
@@ -81,6 +82,7 @@ ul {
   }
 
   .img {
+    object-fit: cover;
     height: 200px;
     border-radius: 10px;
     width: 250px;
