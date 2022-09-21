@@ -12,9 +12,9 @@ import {
 
 export default function Filters({setActualPage}) {
 
-
   const dispatch = useDispatch();
   const genres = useSelector(state => state.genres);
+  
   function handleOnGames(e) {
     dispatch(ordenPorGames(e.target.value));
     setActualPage(1)
@@ -29,17 +29,19 @@ export default function Filters({setActualPage}) {
     dispatch(ratingSort(e.target.value));
     setActualPage(1)
   }
+
   function handleFiltroPorAlpha(e) {
     dispatch(filtroPorAlpha(e.target.value));
     setActualPage(1)
   }
+
   function handlerFiltroPorFecha(e) {
     dispatch(ordenFecha(e.target.value))
   }
+
   useEffect(() => {
     dispatch(getGenres());
   }, [dispatch]);
-
 
   return (
     <div className={style.filter}>
