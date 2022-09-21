@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { getVideoGamePorSearch } from '../../redux/actions/action';
 import s from './Search.module.css';
+import { HiSearch } from "react-icons/hi";
+
 const Search = ({ setActualPage }) => {
   const [name, setName] = useState('');
   const dispacth = useDispatch();
@@ -24,9 +26,7 @@ const Search = ({ setActualPage }) => {
 
   return (
     <div>
-      <form>
         <div className={s.Search}>
-          <label className='label' htmlFor='title'></label>
           <input
             className={s.input__search}
             value={name}
@@ -41,10 +41,10 @@ const Search = ({ setActualPage }) => {
             onClick={e => handleSubmit(e)}
             className={s.buttom__search}
           >
-            BUSCAR
+          <HiSearch style={{color: 'white', fontSize: '20px', textAlign: "center"}}/>
           </button>
+          
         </div>
-      </form>
     </div>
   );
 };
