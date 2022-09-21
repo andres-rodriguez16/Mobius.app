@@ -11,11 +11,10 @@ import Paginado from '../Paginado/Paginado';
 import Search from '../Search/Search';
 import style from './Home.module.css';
 import loading from '../../img/loading-icon.gif';
-import Filters from '../filters/Filters';
+import Filters from '../Filters/Filters';
 const Home = () => {
   const dispatch = useDispatch();
   const videoGames = useSelector(state => state.videoGamesFilter);
-  const genres = useSelector(state => state.genres);
   const [actualPage, setActualPage] = useState(1);
   const [videogamesPorPagina, setvideogamesPorPagina] = useState(15);
   const indeceDelUltimoVideogame = actualPage * videogamesPorPagina;

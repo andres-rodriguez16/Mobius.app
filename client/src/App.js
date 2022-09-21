@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Route } from "react-router-dom"
-import LandingPage from './componets/landinPage/LandingPage';
+import LandingPage from './componets/LandingPage/LandingPage';
 import Home from './componets/Home/Home';
 import NavBar from "./componets/Navbar/Navbar"
 import Details from './componets/Details/Details';
