@@ -4,13 +4,11 @@
   color: #FE7F3C;
   font-family: 'MuseoModerno', cursive;
   font-size: xx-large;
-
 }
 
 .container {
   margin: 3% 6%;
 }
-
 
 .navbar--section__container a {
   cursor: pointer;
@@ -23,7 +21,6 @@
   color: #303435;
 }
 
-
 .navbar--section__container a:hover,
 .navbar--section__container a:focus {
   background-size: 100% 2px;
@@ -34,7 +31,6 @@
   display: flex;
   justify-content: space-around;
 }
-
 
 .navbar {
   display: flex;
@@ -62,7 +58,6 @@
     margin: 3% 6%;
   }
 
-
   .navbar--section__container a {
     cursor: pointer;
     text-decoration: none;
@@ -73,7 +68,6 @@
     transition: background-size .3s;
     color: #303435;
   }
-
 
   .navbar--section__container a:hover,
   .navbar--section__container a:focus {
@@ -86,7 +80,6 @@
     justify-content: space-around;
   }
 
-  
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -99,8 +92,10 @@
     margin-right: 10%;
     margin-top: 20px;
   }
+
   .navbar--section li {
-   margin-right: 10px;
-   margin-left: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 }
+
