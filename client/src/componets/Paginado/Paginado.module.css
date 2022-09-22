@@ -38,4 +38,9 @@
   border-radius: 50%;
 }
 
+.isActive{
+  background-color: #FE7F3C;
+  border-color: transparent;
+  color: rgb(255, 255, 255);
+}
 

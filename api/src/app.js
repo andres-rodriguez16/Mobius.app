@@ -20,7 +20,6 @@ server.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   next();
 });
-
 server.use("/videogames", videogames);
 server.use("/videogame", videogame);
 server.use("/genres", genres);

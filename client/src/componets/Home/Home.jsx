@@ -46,6 +46,7 @@ const Home = () => {
         videgames={videoGames.length}
         videogamesPorPagina={videogamesPorPagina}
         paginado={paginado}
+        actualPage={actualPage}
       />
       {actualesVideogames.length ? (
         <div className={style.list__cards}>
