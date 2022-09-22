@@ -1,66 +1,131 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=MuseoModerno:wght@400;700&display=swap');
 
-
-.name{
-  font-family: 'Montserrat', sans-serif;
-  text-align:center;
-}
-.img{
-  height: 300px;
-  border-radius: 20px;
-  width: 400px;
+.n .loading {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  
-}
-.description__p{
- font-family: 'Montserrat', sans-serif;
- padding-left: 40px;
- padding-right: 40px;
- padding-top: 5px;
- text-align: center;
-}
-.description__text{
-  font-family: 'Montserrat', sans-serif;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 10px;
+  margin: 0px auto;
 }
 
-.rating{
-  font-family: 'Montserrat', sans-serif;
-  padding-top: 20px;
-  text-align:center;
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
 }
-.lanzamiento{
+
+.name {
   font-family: 'Montserrat', sans-serif;
-  padding-top: 20px;
-  text-align:center;
+  margin-left: 10%;
+  margin-bottom: 20px;
 }
+
+.img {
+  object-fit: cover;
+  height: 300px;
+  border-radius: 10px;
+  width: 500px;
+  margin-left: 5%;
+  margin: 10px 0 15px 60px;
+}
+
+.container__info {
+  display: grid;
+}
+
+.fecha .info {
+  margin-left: 5%;
+  margin: 10px 20px 15px 60px;
+}
+
+.description__p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.description__text {
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 100px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.rating {
+  font-family: 'Montserrat', sans-serif;
+  color: #FE7F3C;
+}
+
+.released {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 2px;
+}
+
 .genres {
   font-family: 'Montserrat', sans-serif;
-  padding-top: 20px;
-  text-align:center;
-  
 }
-select, ul{
+
+select,
+ul {
   list-style: none
 }
 
-.platforms{
+.platforms {
   font-family: 'Montserrat', sans-serif;
-  padding-top: 20px;
-  text-align:center;
-  padding-bottom: 20px;
 }
-.button__volver{
-  color: #FE7F3C;
-  border: #FE7F3C;
-  font-family:  'MuseoModerno', cursive;
-  font-size: large;
-  cursor: pointer;
-  background-color: transparent;
-  padding: 20px 50px;
-  margin-top: 5px;
+
+@media (max-width: 600px) {
+  .n .loading {
+    display: block;
+    margin: 0px auto;
+  }
+
+  .name {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+  }
+
+  .img {
+    object-fit: cover;
+    height: 200px;
+    border-radius: 10px;
+    width: 250px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+
+  .fecha .info {
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .description__p {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .description__text {
+    display: none;
+  }
+
+  .rating {
+    font-family: 'Montserrat', sans-serif;
+    color: #FE7F3C;
+  }
+
+  .released {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 2px;
+  }
+
+  .genres {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  select,
+  ul {
+    list-style: none
+  }
+
+  .platforms {
+    font-family: 'Montserrat', sans-serif;
+  }
 }

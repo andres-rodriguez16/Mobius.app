@@ -22,10 +22,10 @@ router.get("/", async (req, res) => {
       } else {
         const peticionPorQuery = await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${YOUR_API_KEY}`);
         if (peticionPorQuery.data.results.length) {
-            if (peticionPorQuery.data.results.length < 15 ) {
-               const menosDeQuince = datosTraidosDeLaApi(peticionPorQuery.data.results)
-               res.json(menosDeQuince)
-            }
+          if (peticionPorQuery.data.results.length < 15) {
+            const menosDeQuince = datosTraidosDeLaApi(peticionPorQuery.data.results)
+            res.json(menosDeQuince)
+          }
           const resultsConQuince = peticionPorQuery.data.results.slice(0, 15);
           const extraerDatosNecesarios = datosTraidosDeLaApi(resultsConQuince);
           res.json(extraerDatosNecesarios);
@@ -51,7 +51,6 @@ router.get("/", async (req, res) => {
   } catch (error) {
     res.status(500).json({ Error: error });
   }
-
 })
 
 router.post("/", async (req, res) => {
@@ -61,7 +60,6 @@ router.post("/", async (req, res) => {
       res.status(400).send("Invalid information to continue with the request")
     }
     if (!img) img = 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2021/02/30-mejores-heroes-ultimos-30-anos-2243371.jpg?itok=1iWouJJI';
-
     if (typeof name === "string" && typeof description === "string" && typeof rating === "number"
       && Array.isArray(platforms) && Array.isArray(genres)) {
       let gameCreate = await Videogame.create({
@@ -80,37 +78,37 @@ router.post("/", async (req, res) => {
   }
 })
 
-router.delete("/:id", async (req ,res, next) => {
+router.delete("/:id", async (req, res, next) => {
   try {
-    let {id} = req.params;
+    let { id } = req.params;
     await Videogame.destroy({
-      where :{
-        id : id
+      where: {
+        id: id
       }
     })
     res.send("Videojuego eliminado correctamente")
   } catch (error) {
-     next(error)
+    throw error
   }
 });
 
-router.put("/:id", async (req ,res, next) => {
- try {
-  let {id} = req.params;
-  let {name, rating} = req.body;
-   await Videogame.update({
-     name : name,
-     rating : rating
-   },
-   {
-     where : {
-       id : id
-     }
-   })
-   res.send("videogames actualizado")
- } catch (error) {
-  
- }
-
+router.put("/:id", async (req, res, next) => {
+  try {
+    let { id } = req.params;
+    let { name, rating } = req.body;
+    await Videogame.update({
+      name: name,
+      rating: rating
+    },
+      {
+        where: {
+          id: id
+        }
+      })
+    res.send("videogames actualizado")
+  } catch (error) {
+    throw error
+  }
 })
 module.exports = router;
+

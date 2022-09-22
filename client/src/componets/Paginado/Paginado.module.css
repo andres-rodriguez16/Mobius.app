@@ -7,7 +7,13 @@
   justify-content: center;
 }
 
-.paginado :focus {
+.number:hover {
+  background-color: #FE7F3C;
+  border-color: transparent;
+  color: rgb(255, 255, 255);
+}
+
+.number:focus {
   background-color: #FE7F3C;
   border-color: transparent;
   color: rgb(255, 255, 255);
@@ -32,14 +38,4 @@
   border-radius: 50%;
 }
 
-.number:hover {
-  background-color: #FE7F3C;
-  border-color: transparent;
-  color: rgb(255, 255, 255);
-}
 
-
-/* .paginado button:hover {
-  background-color: rgb(255, 255, 255);
-  color: #FE7F3C
-} */

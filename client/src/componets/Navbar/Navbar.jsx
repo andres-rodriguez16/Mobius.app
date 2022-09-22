@@ -24,14 +24,10 @@ const NavBar = () => {
               <Link>About</Link>
             </li>
             <li>
-              <Link to='/home'>
-                Home
-              </Link>
+              <Link to='/home'>Home</Link>
             </li>
             <li>
-              <Link to='/createVideogame'>
-                Create
-              </Link>
+              <Link to='/createVideogame'>Create</Link>
             </li>
           </ul>
         </section>
