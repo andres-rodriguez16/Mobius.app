@@ -20,3 +20,5 @@ const Paginado = ({ videgames, videogamesPorPagina, paginado, actualPage }) => {
 };
 
 export default Paginado;
+
+// voy a conseguir empleo
