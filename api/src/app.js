@@ -9,7 +9,7 @@ require('./db.js');
 const server = express();
 
 server.name = 'API';
-
+// quitar nombre del commit
 server.use(express.json());
 server.use(cookieParser());
 server.use(morgan('dev'));
