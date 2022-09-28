@@ -26,7 +26,7 @@ La idea general es crear una aplicación en la cual se puedan ver los distintos 
 - [ ] Sequelize - Postgres
 
 ## Vista del proyecto
-
+-Link del deploy : https://my-mobiusv2.vercel.app/
  1. Forkear el repositorio para tener una copia del mismo en sus cuentas
  2. Clonar el repositorio en sus computadoras para poder ver el proyecto 
  
