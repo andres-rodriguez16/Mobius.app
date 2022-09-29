@@ -16,7 +16,7 @@ function validation(input) {
   }
   if (!input.description) {
     errores.description = 'Este campo no puede estar vacio';
-  } else if (input.description.length <= 200) {
+  } else if (input.description.length <= 50) {
     errores.description =
       'este campo no cumple, con el tamaño suficiente para agregar description';
   }

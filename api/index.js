@@ -23,7 +23,7 @@ const { añadirALaDb } = require("./src/utils/generos.js")
 
 // Syncing all the models at once.
 
-DB.sync({ force: false }).then(() => {
+DB.sync({ force: true }).then(() => {
   añadirALaDb()
   server.listen(process.env.PORT || 3001, () => {
     console.log(`%s listening at ${process.env.PORT || 3001}`); // eslint-disable-line no-console

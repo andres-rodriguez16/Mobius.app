@@ -11,16 +11,16 @@ const Card = ({ name, genres, image, rating, released }) => {
           <div className={style.card__description}>
             {genres?.map((g, index) => {
               return g.name ? (
-                <p key={g.id}>{g.name}</p>
+                <p className={style.genre} key={g.id}>{g.name}</p>
               ) : (
-                <p key={index + 1}>{g}</p>
+                <p className={style.genre} key={index + 1}>{g}</p>
               );
             })}
           </div>
           <div className={style.rating}>
             <p>★{rating}</p>
+            <p className={style.fecha}>{released}</p>
           </div>
-          <p className={style.fecha}>{released}</p>
         </div>
       </div>
     </div>
